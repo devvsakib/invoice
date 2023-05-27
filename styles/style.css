@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+
+.card {
+    margin-top: 40px;
+}
+
+.maincontainer {
+    margin-bottom: 250px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0 solid rgba(0, 0, 0, .125);
+    border-radius: 1rem;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 53px;
+    margin-bottom: 0;
+}
+
+.details {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 40px 0;
+    margin-top: 64px;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.detailsLeft {
+    padding-left: 20px !important;
+    text-transform: capitalize;
+    line-height: 24px;
+}
+
+.divider {
+    /* border: 1px solid rgba(0, 0, 0, .5); */
+    height: 2px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.divider2 {
+    border: 1px solid rgba(0, 0, 0, .5);
+    height: 1px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.container {
+    padding: 0 !important;
+}
+
+.custom-font-size {
+    line-height: 24px;
+    font-size: 18px;
+}
+
+.custom-thead-color {
+    color: #000000;
+    opacity: 0.6;
+}
+
+tbody>tr>td {
+    padding: 40px 0 !important;
+}
+
+
+.discount-btn,
+.discount-btn2 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: capitalize;
+    background: #F0F9F4;
+    border-radius: 4px;
+    color: #66C68F;
+    position: absolute;
+    top: 65px;
+    left: 25%;
+}
+
+.discount-btn2 {
+    top: 50px;
+    left: 280px;
+}
+
+.btns-group {
+    width: 188px;
+    height: auto;
+    margin-bottom: 40px;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.mollure-btn {
+    display: block;
+    font-weight: 500;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: right;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background: linear-gradient(90.14deg, #66C68F 1.34%, #21B8BF 99.89%);
+    border-radius: 55px;
+    padding: 15px;
+    border: none;
+}
+
+.otherBtn {
+    padding: 10px 15px;
+}
+
+.mollure-btn img {
+    margin-right: 5px;
+}
+
+.fas,
+.fa-solid {
+    font-weight: normal !important;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+
+.tableFooter {
+    width: 396px;
+    /* margin-top: 40px; */
+    border-top: 1px solid #E4E4E4;
+    padding: 40px 0;
+}
+
+.tableFooter2 {
+    width: 396px;
+    margin-top: -20px;
+    border-top: 1px solid #E4E4E4;
+    padding: 40px 0;
+}
+
+.pLeft {
+    padding-right: 30px !important;
+}
+
+th {
+    border: none !important;
+}
+
+tbody:last-child>tr:last-child>td {
+    border-bottom: none !important;
+}
+
+table {
+    min-width: 100%;
+}
+
+.dropdown {
+    position: absolute;
+    width: 325px;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px rgba(10, 6, 32, 0.08);
+    padding: 20px;
+    border-radius: 12px;
+    display: none;
+}
+
+
+.save-btn {
+    background: #66C68F;
+    border: 1px solid #66C68F;
+    border-radius: 8px;
+    width: 164px;
+    height: 45px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 40px;
+    /* margin-bottom: 26px !important; */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#save {
+    padding: 13px 15px;
+}
+
+.input-des {
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 8px;
+    width: 285px;
+    height: 50px;
+    padding: 10px;
+}
+
+.select-des,
+.quantityOther,
+.other-select-des {
+    padding: 10px;
+    padding-top: 14px;
+    padding-left: 10px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 8px;
+    width: 285px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #000000;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+    background-image: url('../arrow.svg');
+    background-repeat: no-repeat;
+    background-position-x: 255px;
+    background-position-y: center;
+    padding-right: 20px !important;
+    /* Adjust this value to align the arrow properly */
+}
+
+.otherInput {
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    border-radius: 8px;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-image: url('../arrow.svg');
+    background-position-x: 50px;
+    padding: 9px 20px;
+}
+
+.quantityOther,
+.other-select-des {
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 8px;
+    width: 100px;
+    font-weight: 400;
+    font-size: 14px;
+    height: 40px;
+    text-transform: capitalize;
+    color: #000000;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+    background-image: url('../arrow.svg');
+    background-repeat: no-repeat;
+    background-position-x: 70px;
+    background-position-y: center;
+    padding-right: 20px !important;
+}
+
+
+.other-select-des {
+    padding: 10px;
+    width: 60px;
+    background-position-x: 40px;
+}
+
+
+.eurIn::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #000000;
+    opacity: 0.6;
+}
+
+.input-des:focus {
+    outline: none;
+}
+
+.other-select-des-input {
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    border-radius: 8px;
+    width: 138px;
+    height: 40px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-transform: capitalize;
+    /* width: 136px; */
+    padding: 20px;
+    opacity: 1;
+    color: #000000;
+}
+
+.other-select-des-input:focus {
+    outline: none;
+    color: #000000;
+
+}
+
+.custom-placeholder::placeholder {
+    color: #000000 !important;
+    opacity: 1;
+}
+
+.deleteRow {
+    cursor: pointer;
+}
+
+.dropText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #000000;
+    opacity: 0.6;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.otherBTN {
+    top: 88px;
+    left: 2%;
+}
+
+.service-select {
+    width: 192px;
+    background-position-x: 160px;
+}
+
+.companyTaxText {
+    flex: 1;
+    text-align: center;
+    margin-left: -200px;
+}
