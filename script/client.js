@@ -259,94 +259,63 @@ $(document).ready(function () {
 
     });
 
-    // $(".save-btn").click(function () {
-    //     let discountType = $('.select-des option:selected').val();
-    //     let discountValue = $('.input-des').val();
 
-    //     $('.table-body tr').each(function () {
-    //         let priceInput = $(this).find('.price-input');
-    //         let price = parseFloat($(this).find('.price').text());
-    //         let discountedPrice = 0;
+    let dropdown = $(".dropdown");
 
-    //         if (discountType === 'fixed') {
-    //             discountedPrice = price - parseFloat(discountValue);
-    //         } else if (discountType === 'percentage') {
-    //             let discountPercentage = parseFloat(discountValue);
-    //             discountedPrice = price - (price * (discountPercentage / 100));
-    //         }
-
-    //         priceInput.val(discountedPrice.toFixed(2));
-    //     });
-
-    //     $('.dropdown').hide();
-    // });
-
-    // $(".save-btn").click(function () {
-    //     let discountType = $('.select-des option:selected').val();
-    //     let discountValue = $('.input-des').val();
-
-    //     $('.table-body tr').each(function () {
-    //         let currentRow = $(this);
-    //         let priceInput = currentRow.find('.price-input');
-    //         let price = parseFloat(priceInput.val());
-    //         let discountedPrice = 0;
-
-    //         if (discountType === 'fixed') {
-    //             discountedPrice = price - parseFloat(discountValue);
-    //         } else if (discountType === 'percentage') {
-    //             let discountPercentage = parseFloat(discountValue);
-    //             discountedPrice = price - (price * (discountPercentage / 100));
-    //         }
-
-    //         priceInput.val(discountedPrice.toFixed(2) || ''); // Set empty string if discountedPrice is NaN
-
-    //         // Optionally, update the .price element to show the discounted price as well
-    //         currentRow.find('.price').text(discountedPrice.toFixed(2) || '');
-    //     });
-
-    //     $('.dropdown').hide();
-    // });
-
-    // $(".save-btn").click(function () {
-    //   $(".save-btn").click(function () {
-    //     let discountType = $(this).data('discount-type');
-    //     let discountValue = parseFloat($(this).data('discount-value'));
-    //     let priceInput = $(this).closest('.totalPrice').find('.price-input');
-    //     let price = parseFloat(priceInput.val());
-    //     let discountedPrice = 0;
-      
-    //     if (discountType === 'fixed') {
-    //       discountedPrice = price - discountValue;
-    //     } else if (discountType === 'percentage') {
-    //       discountedPrice = price - (price * (discountValue / 100));
-    //     }
-      
-    //     priceInput.val(discountedPrice.toFixed(2));
-    //     $(this).closest('.dropdown').hide();
-    //   });
-      
     $(".discount-btn").click(function () {
-        $(this).closest('.totalPrice').find('.dropdown').toggle();
-      });
-      
-      $(".dropdown .save-btn").click(function () {
-        let discountType = $(this).closest('.dropdown').find('#discounttype').val();
-        let discountValue = parseFloat($(this).closest('.dropdown').find('.discountPrice').val());
-      
-        $(this).closest('.dropdown').hide();
-      
-        let priceInput = $(this).closest('.totalPrice').find('.price-input');
+        $(".dropdown").toggle(); // Hide any open menus
+        let priceInput = $(this).closest("tr").find(".price-input");
+        dropdown.data("priceInput", priceInput);
+        dropdown.hide(); // Toggle the visibility of the dropdown
+    });
+
+    $(".save-btn").click(function () {
+        let discountType = dropdown.find('.select-des option:selected').val();
+        let discountValue = parseFloat(dropdown.find('.input-des').val());
+
+        // check if discount value is valid
+        if (discountType === '') {
+            alert('Please select a discount type.');
+            return;
+        }
+        if (discountValue === '') {
+            alert('Please enter a discount value.');
+            return;
+        }
+        if ( discountType === 'percentage' && (discountValue < 0 || discountValue > 100) ) {
+            alert('Please enter a valid discount percentage.');
+            return;
+        }
+        if ( discountType === 'fixed' && discountValue < 0 ) {
+            alert('Please enter a valid discount value.');
+            return;
+        }
+        // check if discount value is number or not
+        if (isNaN(discountValue)) {
+            alert('Please enter a valid discount value.');
+            return;
+        }
+
+        let priceInput = dropdown.data("priceInput");
         let price = parseFloat(priceInput.val());
         let discountedPrice = 0;
-      
+
         if (discountType === 'fixed') {
-          discountedPrice = price - discountValue;
+            discountedPrice = price - parseFloat(discountValue);
         } else if (discountType === 'percentage') {
-          discountedPrice = price - (price * (discountValue / 100));
+            let discountPercentage = parseFloat(discountValue);
+            discountedPrice = price - (price * (discountPercentage / 100));
         }
-      
-        priceInput.val(discountedPrice.toFixed(2));
-      });
-      
+
+        priceInput.val(discountedPrice.toFixed(2) || '');
+
+        // clear the dropdown
+        dropdown.find('.input-des').val('');
+        dropdown.hide(); // Hide the dropdown after saving
+    });
+
+
+
+
 
 });

@@ -259,4 +259,61 @@ $(document).ready(function () {
         
         console.log(data);
     });
+
+    
+    let dropdown = $(".dropdown");
+
+    $(".discount-btn").click(function () {
+        $(".dropdown").toggle(); // Hide any open menus
+        let priceInput = $(this).closest("tr").find(".price-input");
+        dropdown.data("priceInput", priceInput);
+        dropdown.hide(); // Toggle the visibility of the dropdown
+    });
+
+    $(".save-btn").click(function () {
+        let discountType = dropdown.find('.select-des option:selected').val();
+        let discountValue = parseFloat(dropdown.find('.input-des').val());
+
+        // check if discount value is valid
+        if (discountType === '') {
+            alert('Please select a discount type.');
+            return;
+        }
+        if (discountValue === '') {
+            alert('Please enter a discount value.');
+            return;
+        }
+        if ( discountType === 'percentage' && (discountValue < 0 || discountValue > 100) ) {
+            alert('Please enter a valid discount percentage.');
+            return;
+        }
+        if ( discountType === 'fixed' && discountValue < 0 ) {
+            alert('Please enter a valid discount value.');
+            return;
+        }
+        // check if discount value is number or not
+        if (isNaN(discountValue)) {
+            alert('Please enter a valid discount value.');
+            return;
+        }
+
+        let priceInput = dropdown.data("priceInput");
+        let price = parseFloat(priceInput.val());
+        let discountedPrice = 0;
+
+        if (discountType === 'fixed') {
+            discountedPrice = price - parseFloat(discountValue);
+        } else if (discountType === 'percentage') {
+            let discountPercentage = parseFloat(discountValue);
+            discountedPrice = price - (price * (discountPercentage / 100));
+        }
+
+        priceInput.val(discountedPrice.toFixed(2) || '');
+
+        // clear the dropdown
+        dropdown.find('.input-des').val('');
+        dropdown.hide(); // Hide the dropdown after saving
+    });
+
+
 });

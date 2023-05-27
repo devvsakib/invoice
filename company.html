@@ -272,16 +272,15 @@
         <div class="dropdown">
             <div>
                 <p class="dropText">Discount</p>
-                <!-- select tage with default value: Select fixed or % Discount -->
-                <select class="select-des text-muted" name="cars" id="cars">
-                    <option value="volvo">Select fixed or % Discount</option>
-                    <option value="saab">Lorem</option>
-                    <option value="opel">Lorem</option>
+                <select class="select-des text-muted" name="discounttype" id="discounttype">
+                    <option value="">Select fixed or % Discount</option>
+                    <option value="fixed">Fixed Discount</option>
+                    <option value="percentage">% Discount</option>
                 </select>
             </div>
             <div class="eur-or">
                 <p class="dropText">EUR or %</p>
-                <input class="input-des" placeholder="Enter Number" type="text">
+                <input class="input-des discountPrice" placeholder="Enter Number" type="text">
             </div>
             <div class="text-center">
                 <button class="save-btn">Save</button>
