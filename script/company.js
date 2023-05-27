@@ -80,7 +80,7 @@ $(document).ready(function () {
             </select>
         </td>
         <td class="text-center">
-        <select class="other-select-des service-select">
+        <select class="other-select-des supsurvice service-select">
         <option default>Services</option>
         <option value="Services">Services 1</option>
         <option value="Services" default>Services 2</option>
