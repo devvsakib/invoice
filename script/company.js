@@ -1,4 +1,49 @@
 $(document).ready(function () {
+    let totalPrice = 0;
+    let totalVat = 0;
+    calculateTotalVat();
+    calculateTotalPrice();
+    $('#subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
+
+    $(document).on('change', '.quantity-select', function () {
+        calculateTotalPrice();
+    });
+
+    // Event listener for price input change
+    $(document).on('change', '.price-input', function () {
+        calculateTotalPrice();
+    });
+    $(document).on('change', '.vat-input', function () {
+        calculateTotalVat();
+    });
+
+    function calculateTotalVat() {
+        totalVat = 0;
+        $('.vat-input').each(function () {
+            let vat = parseFloat($(this).val());
+            let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
+            totalVat += vat * quantity;
+        });
+        $('#totalVat').text(totalVat.toFixed(2));
+        $("#grandTotal").text(totalPrice + totalVat + " EUR")
+    }
+
+    $("#grandTotal").text(totalPrice + totalVat + " EUR")
+    $('#totalVat').text(totalVat.toFixed(2));
+
+
+    function calculateTotalPrice() {
+        totalPrice = 0;
+        $('.price-input').each(function () {
+            let price = parseFloat($(this).val());
+            let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
+            totalPrice += price * quantity;
+        });
+        $('#subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
+
+        $("#grandTotal").text(totalPrice + totalVat + " EUR")
+    }
+
     $(document).on('click', '.discount-btn', function (event) {
         $('.dropdown').toggle();
         let buttonPosition = $(this).offset();
@@ -237,12 +282,12 @@ $(document).ready(function () {
                 if ($input.length) {
                     let inputValue = $input.val();
                     if ($input.hasClass('price-input')) {
-                      inputValue += ' EUR';
+                        inputValue += ' EUR';
                     } else {
                         inputValue += '%';
                     }
                     $td.text(inputValue);
-                  }
+                }
 
                 if ($td.hasClass('duration-select')) {
                     // Add space between hours and minutes
@@ -256,11 +301,11 @@ $(document).ready(function () {
         $('#save').addClass('d-none');
         $('.discount-btn2').addClass('d-none');
         $('.table-body td.text-end.pLeft').remove();
-        
+
         console.log(data);
     });
 
-    
+
     let dropdown = $(".dropdown");
 
     $(".discount-btn").click(function () {
@@ -283,11 +328,11 @@ $(document).ready(function () {
             alert('Please enter a discount value.');
             return;
         }
-        if ( discountType === 'percentage' && (discountValue < 0 || discountValue > 100) ) {
+        if (discountType === 'percentage' && (discountValue < 0 || discountValue > 100)) {
             alert('Please enter a valid discount percentage.');
             return;
         }
-        if ( discountType === 'fixed' && discountValue < 0 ) {
+        if (discountType === 'fixed' && discountValue < 0) {
             alert('Please enter a valid discount value.');
             return;
         }

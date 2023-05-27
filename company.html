@@ -121,13 +121,13 @@
                                                 <td class="text-center">
                                                     <input
                                                         class="other-select-des-input text-center vat-input custom-placeholder"
-                                                        type="text" placeholder="% VAT">
+                                                        type="text" placeholder="% VAT" value="2">
                                                 </td>
                                                 <td colspan="2" class="text-center position-relative">
                                                     <span class="discount-btn otherBTN">Discount</span>
                                                     <input
                                                         class="other-select-des-input custom-placeholder price-input text-center"
-                                                        type="text" placeholder="Price">
+                                                        type="text" placeholder="Price" value="210">
                                                 </td>
                                                 <td class="text-end pLeft">
                                                     <span class="deleteRow">
@@ -164,56 +164,13 @@
                                                 <td class="text-center">
                                                     <input
                                                         class="other-select-des-input text-center vat-input custom-placeholder"
-                                                        type="text" placeholder="% VAT">
+                                                        type="text" placeholder="% VAT" value="5">
                                                 </td>
                                                 <td colspan="2" class="text-center position-relative">
                                                     <span class="discount-btn otherBTN">Discount</span>
                                                     <input
                                                         class="other-select-des-input custom-placeholder price-input text-center"
-                                                        type="text" placeholder="Price">
-                                                </td>
-                                                <td class="text-end pLeft">
-                                                    <span class="deleteRow">
-                                                        <img src="./trash.svg" alt="">
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right pLeft quant">
-                                                    <select class="quantityOther quantity-select">
-                                                        <option value="1" default>1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </td>
-                                                <td class="text-center">
-                                                    <select class="other-select-des supsurvice service-select">
-                                                        <option default>Select Subservices</option>
-                                                        <option value="Services">Services 1</option>
-                                                        <option value="Services" default>Services 2</option>
-                                                    </select>
-                                                </td>
-                                                <td class="text-center">
-                                                    <select class="other-select-des duration-select">
-                                                        <option value="2">2h</option>
-                                                        <option value="3">3h</option>
-                                                        <!-- Add more hour options if needed -->
-                                                    </select>
-                                                    <select class="other-select-des duration-minute-select">
-                                                        <option value="30">30m</option>
-                                                        <option value="45">45m</option>
-                                                    </select>
-                                                </td>
-                                                <td class="text-center">
-                                                    <input
-                                                        class="other-select-des-input text-center vat-input custom-placeholder"
-                                                        type="text" placeholder="% VAT">
-                                                </td>
-                                                <td colspan="2" class="text-center position-relative">
-                                                    <span class="discount-btn otherBTN">Discount</span>
-                                                    <input
-                                                        class="other-select-des-input custom-placeholder price-input text-center"
-                                                        type="text" placeholder="Price">
+                                                        type="text" placeholder="Price" value="21">
                                                 </td>
                                                 <td class="text-end pLeft">
                                                     <span class="deleteRow">
@@ -243,19 +200,21 @@
                                         <div
                                             class="tableFooter text-end d-flex justify-content-between position-relative">
                                             <p>Total (excl. VAT)</p>
-                                            <p class="">23 EUR
+                                            <p class="">
+                                                <span id="subtotalPrice"></span>
                                             </p>
                                         </div>
                                         <div
                                             class="tableFooter text-end d-flex justify-content-between position-relative">
                                             <p class="companyTaxText">Total VAT</p>
-                                            <p class="">23 EUR
+                                            <p class="" ><span id="totalVat">0</span> EUR
                                             </p>
                                         </div>
                                         <div
                                             class="tableFooter text-end d-flex justify-content-between position-relative">
                                             <p class="companyTaxText">Total</p>
-                                            <p class=""><span class="discount-btn discount-btn2">Discount</span> 23 EUR
+                                            <p class=""><span class="discount-btn discount-btn2">Discount</span>
+                                              <span id="grandTotal"></span>
                                             </p>
                                         </div>
                                     </div>

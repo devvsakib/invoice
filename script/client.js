@@ -7,6 +7,26 @@ $(document).ready(function () {
     });
     $('#subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
 
+    $(document).on('change', '.quantity-select', function () {
+        calculateTotalPrice();
+    });
+
+    // Event listener for price input change
+    $(document).on('change', '.price-input', function () {
+        calculateTotalPrice();
+    });
+
+    function calculateTotalPrice() {
+        totalPrice = 0;
+        $('.price-input').each(function () {
+            let price = parseFloat($(this).val());
+            let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
+            totalPrice += price * quantity;
+        });
+        $('#subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
+    }
+
+
     $(document).on('click', '.discount-btn', function (event) {
         $('.dropdown').toggle();
         let buttonPosition = $(this).offset();
@@ -41,11 +61,11 @@ $(document).ready(function () {
             alert('Please enter a discount value.');
             return;
         }
-        if ( discountType === 'percentage' && (discountValue < 0 || discountValue > 100) ) {
+        if (discountType === 'percentage' && (discountValue < 0 || discountValue > 100)) {
             alert('Please enter a valid discount percentage.');
             return;
         }
-        if ( discountType === 'fixed' && discountValue < 0 ) {
+        if (discountType === 'fixed' && discountValue < 0) {
             alert('Please enter a valid discount value.');
             return;
         }
@@ -68,7 +88,6 @@ $(document).ready(function () {
 
 
         priceInput.val(discountedPrice.toFixed(2) || '');
-
 
         // clear the dropdown
         dropdown.find('.input-des').val('');
@@ -206,15 +225,16 @@ $(document).ready(function () {
     });
 
     $('#save').click(function () {
+        totalPrice = 0;
 
-    
         $('.price-input').each(function () {
             let price = parseFloat($(this).val());
             let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
             totalPrice += price * quantity;
         });
+
         $('.subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
-        
+
         // Create client information object
         let clientInfo = {
             serviceDate: $('.detailsLeft').find('span.text-muted:eq(0)').text(),
@@ -313,7 +333,7 @@ $(document).ready(function () {
     });
 
 
- 
+
 
 
 
