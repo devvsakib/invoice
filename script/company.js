@@ -257,10 +257,10 @@ $(document).ready(function () {
             });
         });
         $('.btns-group').addClass('d-none');
+        $('#save').addClass('d-none');
         $('.discount-btn2').addClass('d-none');
         $('.table-body td.text-end.pLeft').remove();
         
-        // Print the JSON object in the console
         console.log(data);
     });
 });

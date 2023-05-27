@@ -374,19 +374,41 @@ table {
     text-align: center;
     margin-left: -200px;
 }
-.otherInp{
+
+.otherInp {
     width: 112px;
     padding-left: 20px;
     background-position-x: 75px;
 }
-.productInp{
+
+.productInp {
     width: 212px;
     padding-left: 20px;
     background-position-x: 170px;
 }
 
-.supsurvice{
+.supsurvice {
     width: 192px;
     padding-left: 20px;
+}
+select{
+    cursor: pointer;
+    outline: none;
+}
+select option{
+    background: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px !important;
+    border-bottom: 2px solid orange !important;
+}
+.py{
+    padding-top: 12px !important;
+    padding-bottom: 30px !important;
+}
 
+.sendBtn{
+    width: 188px;
+    background: #21B8BF;
+    border-radius: 8px;
 }
