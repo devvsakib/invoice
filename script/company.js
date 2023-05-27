@@ -239,9 +239,14 @@ $(document).ready(function () {
                 }
 
                 if ($input.length) {
-                    let inputValue = $input.val() + ' Euro';
+                    let inputValue = $input.val();
+                    if ($input.hasClass('price-input')) {
+                      inputValue += ' Euro';
+                    } else {
+                        inputValue += '%';
+                    }
                     $td.text(inputValue);
-                }
+                  }
 
                 if ($td.hasClass('duration-select')) {
                     // Add space between hours and minutes
