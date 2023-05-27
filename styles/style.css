@@ -374,3 +374,8 @@ table {
     text-align: center;
     margin-left: -200px;
 }
+.otherInp{
+    width: 112px;
+    padding-left: 20px;
+    background-position-x: 75px;
+}
