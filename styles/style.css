@@ -108,7 +108,7 @@ tbody>tr>td {
 }
 
 .btns-group {
-    width: 188px;
+    width: 175px;
     height: auto;
     margin-bottom: 40px;
     gap: 10px;
@@ -129,7 +129,7 @@ tbody>tr>td {
     color: #FFFFFF;
     background: linear-gradient(90.14deg, #66C68F 1.34%, #21B8BF 99.89%);
     border-radius: 55px;
-    padding: 15px;
+    padding: 12px;
     border: none;
 }
 
