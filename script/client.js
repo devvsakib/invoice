@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    let totalPrice = 0;
+    $('.price-input').each(function () {
+        let price = parseFloat($(this).val());
+        let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
+        totalPrice += price * quantity;
+    });
+    $('#subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
+
     $(document).on('click', '.discount-btn', function (event) {
         $('.dropdown').toggle();
         let buttonPosition = $(this).offset();
@@ -10,6 +18,61 @@ $(document).ready(function () {
             left: leftPosition
         });
         event.stopPropagation();
+    });
+    let dropdown = $(".dropdown");
+
+    $(".discount-btn").click(function () {
+        $(".dropdown").toggle(); // Hide any open menus
+        let priceInput = $(this).closest("tr").find(".price-input");
+        dropdown.data("priceInput", priceInput);
+        dropdown.hide(); // Toggle the visibility of the dropdown
+    });
+
+    $(".save-btn").click(function () {
+        let discountType = dropdown.find('.select-des option:selected').val();
+        let discountValue = parseFloat(dropdown.find('.input-des').val());
+
+        // check if discount value is valid
+        if (discountType === '') {
+            alert('Please select a discount type.');
+            return;
+        }
+        if (discountValue === '') {
+            alert('Please enter a discount value.');
+            return;
+        }
+        if ( discountType === 'percentage' && (discountValue < 0 || discountValue > 100) ) {
+            alert('Please enter a valid discount percentage.');
+            return;
+        }
+        if ( discountType === 'fixed' && discountValue < 0 ) {
+            alert('Please enter a valid discount value.');
+            return;
+        }
+        // check if discount value is number or not
+        if (isNaN(discountValue)) {
+            alert('Please enter a valid discount value.');
+            return;
+        }
+
+        let priceInput = dropdown.data("priceInput");
+        let price = parseFloat(priceInput.val());
+        let discountedPrice = 0;
+
+        if (discountType === 'fixed') {
+            discountedPrice = price - parseFloat(discountValue);
+        } else if (discountType === 'percentage') {
+            let discountPercentage = parseFloat(discountValue);
+            discountedPrice = price - (price * (discountPercentage / 100));
+        }
+
+
+        priceInput.val(discountedPrice.toFixed(2) || '');
+
+
+        // clear the dropdown
+        dropdown.find('.input-des').val('');
+        dropdown.hide();
     });
 
     $(document).click(function () {
@@ -143,25 +206,15 @@ $(document).ready(function () {
     });
 
     $('#save').click(function () {
-        let totalPrice = 0;
-        let discountedPrice = 0;
 
+    
         $('.price-input').each(function () {
             let price = parseFloat($(this).val());
             let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
             totalPrice += price * quantity;
         });
-
-        $('.table-body tr').each(function () {
-            let price = parseFloat($(this).find('.price-input').val());
-            let quantity = parseFloat($(this).find('.quantity-select').val());
-            discountedPrice += price * quantity;
-        });
-
-        $('.totalPrice').text(totalPrice.toFixed(2));
-        $('.discountedPrice').text(discountedPrice.toFixed(2))
-
-
+        $('.subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
+        
         // Create client information object
         let clientInfo = {
             serviceDate: $('.detailsLeft').find('span.text-muted:eq(0)').text(),
@@ -250,7 +303,7 @@ $(document).ready(function () {
             });
         });
         $('.btns-group').addClass('d-none');
-        $('#save').addClass('d-none');
+        // $('#save').addClass('d-none');
         $('.discount-btn2').addClass('d-none');
         $('.table-body td.text-end.pLeft').remove();
 
@@ -260,60 +313,7 @@ $(document).ready(function () {
     });
 
 
-    let dropdown = $(".dropdown");
-
-    $(".discount-btn").click(function () {
-        $(".dropdown").toggle(); // Hide any open menus
-        let priceInput = $(this).closest("tr").find(".price-input");
-        dropdown.data("priceInput", priceInput);
-        dropdown.hide(); // Toggle the visibility of the dropdown
-    });
-
-    $(".save-btn").click(function () {
-        let discountType = dropdown.find('.select-des option:selected').val();
-        let discountValue = parseFloat(dropdown.find('.input-des').val());
-
-        // check if discount value is valid
-        if (discountType === '') {
-            alert('Please select a discount type.');
-            return;
-        }
-        if (discountValue === '') {
-            alert('Please enter a discount value.');
-            return;
-        }
-        if ( discountType === 'percentage' && (discountValue < 0 || discountValue > 100) ) {
-            alert('Please enter a valid discount percentage.');
-            return;
-        }
-        if ( discountType === 'fixed' && discountValue < 0 ) {
-            alert('Please enter a valid discount value.');
-            return;
-        }
-        // check if discount value is number or not
-        if (isNaN(discountValue)) {
-            alert('Please enter a valid discount value.');
-            return;
-        }
-
-        let priceInput = dropdown.data("priceInput");
-        let price = parseFloat(priceInput.val());
-        let discountedPrice = 0;
-
-        if (discountType === 'fixed') {
-            discountedPrice = price - parseFloat(discountValue);
-        } else if (discountType === 'percentage') {
-            let discountPercentage = parseFloat(discountValue);
-            discountedPrice = price - (price * (discountPercentage / 100));
-        }
-
-        priceInput.val(discountedPrice.toFixed(2) || '');
-
-        // clear the dropdown
-        dropdown.find('.input-des').val('');
-        dropdown.hide(); // Hide the dropdown after saving
-    });
-
+ 
 
 
 

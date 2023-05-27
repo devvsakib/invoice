@@ -103,7 +103,7 @@ tbody>tr>td {
 }
 
 .discount-btn2 {
-    top: 50px;
+    top: 65px;
     left: 280px;
 }
 
@@ -380,9 +380,9 @@ table {
     padding-left: 20px;
 }
 .productInp {
-    width: 212px;
+    width: 190px;
     padding-left: 20px;
-    background-position-x: 170px;
+    background-position-x: 160px;
 }
 
 .supsurvice {
