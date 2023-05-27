@@ -124,11 +124,7 @@ $(document).ready(function () {
             </select>
         </td>
         <td class="text-center">
-        <select class="other-select-des otherInp service-select">
-        <option default>Input</option>
-        <option value="Services">Services 1</option>
-        <option value="Services" default>Services 2</option>
-    </select>
+        <input class="other-select-des-input otherInput text-center  custom-placeholder" type="text" placeholder="Input">
         </td>
         <td class="text-center">
           <select class="other-select-des duration-select">

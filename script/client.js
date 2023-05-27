@@ -54,7 +54,7 @@ $(document).ready(function () {
       <option value="45">45m</option>
   </select>
       </td>
-      <td colspan="2" class="text-center position-relative">
+      <td colspan="2" class="text-center position-relative totalPrice">
       <span class="discount-btn otherBTN">Discount</span>
           <input class="other-select-des-input price-input custom-placeholder" type="text" placeholder="Price Inc VAT">
       </td>
@@ -93,7 +93,7 @@ $(document).ready(function () {
             <option value="45">45m</option>
           </select>
         </td>
-        <td colspan="2" class="text-center position-relative">
+        <td colspan="2" class="text-center position-relative totalPrice">
             <span class="discount-btn otherBTN">Discount</span>
             <input class="other-select-des-input price-input custom-placeholder" type="text" placeholder="Price Inc VAT">
         </td>
@@ -116,11 +116,7 @@ $(document).ready(function () {
             </select>
         </td>
         <td class="text-center">
-        <select class="other-select-des otherInp service-select">
-        <option default>Input</option>
-        <option value="Services">Services 1</option>
-        <option value="Services" default>Services 2</option>
-    </select>
+            <input class="other-select-des-input otherInput text-center  custom-placeholder" type="text" placeholder="Input">
         </td>
         <td class="text-center">
           <select class="other-select-des duration-select">
@@ -133,7 +129,7 @@ $(document).ready(function () {
             <option value="45">45m</option>
           </select>
         </td>
-        <td colspan="2" class="text-center position-relative">
+        <td colspan="2" class="text-center position-relative totalPrice">
             <span class="discount-btn otherBTN">Discount</span>
             <input class="other-select-des-input price-input" type="text" placeholder="Price Inc VAT">
         </td>
@@ -147,7 +143,23 @@ $(document).ready(function () {
     });
 
     $('#save').click(function () {
+        let totalPrice = 0;
+        let discountedPrice = 0;
 
+        $('.price-input').each(function () {
+            let price = parseFloat($(this).val());
+            let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
+            totalPrice += price * quantity;
+        });
+
+        $('.table-body tr').each(function () {
+            let price = parseFloat($(this).find('.price-input').val());
+            let quantity = parseFloat($(this).find('.quantity-select').val());
+            discountedPrice += price * quantity;
+        });
+
+        $('.totalPrice').text(totalPrice.toFixed(2));
+        $('.discountedPrice').text(discountedPrice.toFixed(2))
 
 
         // Create client information object
@@ -241,8 +253,100 @@ $(document).ready(function () {
         $('#save').addClass('d-none');
         $('.discount-btn2').addClass('d-none');
         $('.table-body td.text-end.pLeft').remove();
-        
+
         // Print the JSON object in the console
         console.log(data);
+
     });
+
+    // $(".save-btn").click(function () {
+    //     let discountType = $('.select-des option:selected').val();
+    //     let discountValue = $('.input-des').val();
+
+    //     $('.table-body tr').each(function () {
+    //         let priceInput = $(this).find('.price-input');
+    //         let price = parseFloat($(this).find('.price').text());
+    //         let discountedPrice = 0;
+
+    //         if (discountType === 'fixed') {
+    //             discountedPrice = price - parseFloat(discountValue);
+    //         } else if (discountType === 'percentage') {
+    //             let discountPercentage = parseFloat(discountValue);
+    //             discountedPrice = price - (price * (discountPercentage / 100));
+    //         }
+
+    //         priceInput.val(discountedPrice.toFixed(2));
+    //     });
+
+    //     $('.dropdown').hide();
+    // });
+
+    // $(".save-btn").click(function () {
+    //     let discountType = $('.select-des option:selected').val();
+    //     let discountValue = $('.input-des').val();
+
+    //     $('.table-body tr').each(function () {
+    //         let currentRow = $(this);
+    //         let priceInput = currentRow.find('.price-input');
+    //         let price = parseFloat(priceInput.val());
+    //         let discountedPrice = 0;
+
+    //         if (discountType === 'fixed') {
+    //             discountedPrice = price - parseFloat(discountValue);
+    //         } else if (discountType === 'percentage') {
+    //             let discountPercentage = parseFloat(discountValue);
+    //             discountedPrice = price - (price * (discountPercentage / 100));
+    //         }
+
+    //         priceInput.val(discountedPrice.toFixed(2) || ''); // Set empty string if discountedPrice is NaN
+
+    //         // Optionally, update the .price element to show the discounted price as well
+    //         currentRow.find('.price').text(discountedPrice.toFixed(2) || '');
+    //     });
+
+    //     $('.dropdown').hide();
+    // });
+
+    // $(".save-btn").click(function () {
+    //   $(".save-btn").click(function () {
+    //     let discountType = $(this).data('discount-type');
+    //     let discountValue = parseFloat($(this).data('discount-value'));
+    //     let priceInput = $(this).closest('.totalPrice').find('.price-input');
+    //     let price = parseFloat(priceInput.val());
+    //     let discountedPrice = 0;
+      
+    //     if (discountType === 'fixed') {
+    //       discountedPrice = price - discountValue;
+    //     } else if (discountType === 'percentage') {
+    //       discountedPrice = price - (price * (discountValue / 100));
+    //     }
+      
+    //     priceInput.val(discountedPrice.toFixed(2));
+    //     $(this).closest('.dropdown').hide();
+    //   });
+      
+    $(".discount-btn").click(function () {
+        $(this).closest('.totalPrice').find('.dropdown').toggle();
+      });
+      
+      $(".dropdown .save-btn").click(function () {
+        let discountType = $(this).closest('.dropdown').find('#discounttype').val();
+        let discountValue = parseFloat($(this).closest('.dropdown').find('.discountPrice').val());
+      
+        $(this).closest('.dropdown').hide();
+      
+        let priceInput = $(this).closest('.totalPrice').find('.price-input');
+        let price = parseFloat(priceInput.val());
+        let discountedPrice = 0;
+      
+        if (discountType === 'fixed') {
+          discountedPrice = price - discountValue;
+        } else if (discountType === 'percentage') {
+          discountedPrice = price - (price * (discountValue / 100));
+        }
+      
+        priceInput.val(discountedPrice.toFixed(2));
+      });
+      
+
 });
