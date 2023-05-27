@@ -193,7 +193,7 @@ $(document).ready(function () {
                 quantity: quantity,
                 description: description,
                 duration: duration,
-                price: price + ' Euro',
+                price: price + ' EUR',
             };
 
             // Add item to the array
@@ -225,7 +225,7 @@ $(document).ready(function () {
                 }
 
                 if ($input.length) {
-                    let inputValue = $input.val() + ' Euro';
+                    let inputValue = $input.val() + ' EUR';
                     $td.text(inputValue);
                 }
 

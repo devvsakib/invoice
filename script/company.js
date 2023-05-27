@@ -206,7 +206,7 @@ $(document).ready(function () {
                 quantity: quantity,
                 description: description,
                 duration: duration,
-                price: price + ' Euro',
+                price: price + ' EUR',
                 vat: vat + ' %',
             };
 
@@ -241,7 +241,7 @@ $(document).ready(function () {
                 if ($input.length) {
                     let inputValue = $input.val();
                     if ($input.hasClass('price-input')) {
-                      inputValue += ' Euro';
+                      inputValue += ' EUR';
                     } else {
                         inputValue += '%';
                     }
