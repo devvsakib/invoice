@@ -462,25 +462,23 @@ select {
     position: absolute;
     left: 2%;
     top: 100%;
+    padding-left: 20px;
+    box-shadow: 0px 0px 20px rgba(16, 8, 63, 0.09);
+    border-radius: 8px;
 }
 
 .custom-select .selector-options li {
     height: 44px;
     display: flex;
     align-items: center;
-    padding: 0 15px;
     cursor: pointer;
     transition: background 0.3s ease;
-    padding-left: 20px;
-    box-shadow: 0px 0px 20px rgba(16, 8, 63, 0.09);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .custom-select .selector-options li:first-child {
-    border-radius: 8px 8px 0 0;
     border-width: 95%;
 }
 .custom-select .selector-options li:last-child {
-    border-radius: 0 0 8px 8px;
     border-bottom: none;
 }
 
