@@ -379,6 +379,7 @@ table {
 .otherInp {
     padding-left: 20px;
 }
+
 .productInp {
     width: 190px;
     padding-left: 20px;
@@ -432,6 +433,35 @@ select {
     background: #03A9F4;
 }
 
-.otherInput{
+.otherInput {
     width: 190px;
+}
+
+.actual-price {
+    font-size: 12px !important;
+    text-decoration: line-through;
+}
+
+.ddtp {
+    width: 93px;
+    display: block;
+    height: 40px;
+    text-align: right !important;
+    margin: 0 auto !important;
+}
+
+.deducted-price {
+    margin-right: -0px !important;
+}
+
+.totalPriceAfter {
+    display: flex;
+    justify-content: center;
+}
+
+.extraMargin {
+    margin-right: -53px !important;
+}
+.extraMarginCompany{
+    margin-right: -30px !important;
 }

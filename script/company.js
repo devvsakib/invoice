@@ -279,6 +279,12 @@ $(document).ready(function () {
                     $td.text(selectedOption);
                 }
 
+                 // if there is td text only, skip
+                if ($td.text().length > 1 && $td.text().indexOf('EUR') > -1) {
+                    $td.removeClass('extraMarginCompany')
+                    return;
+                }
+
                 if ($input.length) {
                     let inputValue = $input.val();
                     if ($input.hasClass('price-input')) {
@@ -355,6 +361,22 @@ $(document).ready(function () {
 
         priceInput.val(discountedPrice.toFixed(2) || '');
 
+        let actualPrice = price.toFixed(2) + " EUR";
+        let deductedPrice = (price - discountedPrice).toFixed(2) + " EUR";
+
+        let $totalPrice = priceInput.closest('td.totalPrice');
+        $totalPrice.find('.actual-price').text(actualPrice);
+        $totalPrice.find('.discounted-price').text(discountedPrice.toFixed(2) + " EUR");
+        $totalPrice.find('.deducted-price').text("- " + deductedPrice);
+        $totalPrice.find('.discount-btn').hide();
+        $totalPrice.removeClass("text-center");
+
+        priceInput.closest('tr').find('.discount-btn').hide();
+        priceInput.closest('tr').find('.totalPrice').removeClass("totalPricebefore");
+        priceInput.closest('tr').find('.totalPrice').addClass("totalPriceAfter");
+        priceInput.closest('tr').find('.totalPrice').addClass("extraMarginCompany");
+        priceInput.hide()
+        
         // clear the dropdown
         dropdown.find('.input-des').val('');
         dropdown.hide(); // Hide the dropdown after saving
