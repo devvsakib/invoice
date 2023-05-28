@@ -185,7 +185,8 @@ $(document).ready(function () {
                 </p>
                 <div>
                     <span class="deducted-price"></span>
-                    <button title="Remove Discount?" class="removeDiscount d-none">x</button>
+                    <button title="Remove Discount?" class="removeDiscount d-none"><img
+                    src="./cross.svg" /></button>
                 </div>
             </div>
         </td>
@@ -248,8 +249,8 @@ $(document).ready(function () {
                 </p>
                 <div>
                     <span class="deducted-price"></span>
-                    <button title="Remove Discount?"
-                        class="removeDiscount d-none">x</button>
+                    <button title="Remove Discount?" class="removeDiscount d-none"><img
+                    src="./cross.svg" /></button>
                 </div>
             </div>
         </td>
@@ -304,7 +305,8 @@ $(document).ready(function () {
                 </p>
                 <div>
                     <span class="deducted-price"></span>
-                    <button title="Remove Discount?" class="removeDiscount d-none">x</button>
+                    <button title="Remove Discount?" class="removeDiscount d-none"><img
+                    src="./cross.svg" /></button>
                 </div>
             </div>
         </td>
