@@ -107,14 +107,19 @@ $(document).ready(function () {
   </td>
   <td colspan="2" class="text-center position-relative totalPrice ">
   <span class="discount-btn otherBTN">Discount</span>
-  <input class="other-select-des-input price-input custom-placeholder" type="text"
-      placeholder="Price Inc VAT" value="3121">
+  <input class="other-select-des-input price-input original-price" type="text"
+      placeholder="Price" value="30">
+
   <div class="text-end ddt">
       <p class="text-right" style="margin-bottom: 0;"><span
               class="actual-price"></span>
           <span class="discounted-price"></span>
       </p>
-      <span class="deducted-price"></span>
+      <div>
+          <span class="deducted-price"></span>
+          <button title="Remove Discount?"
+              class="removeDiscount d-none">x</button>
+      </div>
   </div>
 </td>
       <td class="text-end pLeft">
@@ -157,14 +162,19 @@ $(document).ready(function () {
     </td>
     <td colspan="2" class="text-center position-relative totalPrice ">
     <span class="discount-btn otherBTN">Discount</span>
-    <input class="other-select-des-input price-input custom-placeholder" type="text"
-        placeholder="Price Inc VAT" value="3121">
+    <input class="other-select-des-input price-input original-price" type="text"
+        placeholder="Price" value="30">
+
     <div class="text-end ddt">
         <p class="text-right" style="margin-bottom: 0;"><span
                 class="actual-price"></span>
             <span class="discounted-price"></span>
         </p>
-        <span class="deducted-price"></span>
+        <div>
+            <span class="deducted-price"></span>
+            <button title="Remove Discount?"
+                class="removeDiscount d-none">x</button>
+        </div>
     </div>
 </td>
         <td class="text-end pLeft">
@@ -205,14 +215,19 @@ $(document).ready(function () {
     </td>
     <td colspan="2" class="text-center position-relative totalPrice ">
     <span class="discount-btn otherBTN">Discount</span>
-    <input class="other-select-des-input price-input custom-placeholder" type="text"
-        placeholder="Price Inc VAT" value="3121">
+    <input class="other-select-des-input price-input original-price" type="text"
+        placeholder="Price" value="30">
+
     <div class="text-end ddt">
         <p class="text-right" style="margin-bottom: 0;"><span
                 class="actual-price"></span>
             <span class="discounted-price"></span>
         </p>
-        <span class="deducted-price"></span>
+        <div>
+            <span class="deducted-price"></span>
+            <button title="Remove Discount?"
+                class="removeDiscount d-none">x</button>
+        </div>
     </div>
 </td>
         <td class="text-end pLeft">
@@ -372,9 +387,8 @@ $(document).ready(function () {
             return;
         }
 
-        // calculate discounted price
-
-
+        let removeDiscount = thisBtn.closest("tr").find(".removeDiscount");
+        removeDiscount.removeClass("d-none");
         let priceInput = thisBtn.closest("tr").find(".price-input");
         let price = parseFloat(priceInput.val());
         let discountedPrice = 0;
@@ -403,6 +417,24 @@ $(document).ready(function () {
         // clear the dropdown
         dropdown.find('.input-des').val('');
         dropdown.hide(); // Hide the dropdown after saving
+    });
+
+    $(document).on('click', '.removeDiscount', function () {
+        let $row = $(this).closest('tr');
+        let originalPrice = $row.find('.actual-price').text();
+        let discountBTN = $row.find('.discount-btn');
+        let totalPriceInput = $row.find('.price-input');
+
+        // Update the price input value to the original price
+        totalPriceInput.css('display', '');
+        discountBTN.toggle()
+        totalPriceInput.val(originalPrice);
+
+        $row.find('.actual-price').text('');
+        $row.find('.deducted-price').text('');
+        $row.find('.discounted-price').text('');
+        calculateTotalPrice();
+        $(this).hide();
     });
 
 
