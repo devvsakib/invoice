@@ -434,14 +434,39 @@ select {
 
 
 @media only screen and (max-width: 1100px) {
-    body {
+    html {
+        overflow-x: hidden;
+    }
+    .details{
+        width: 100vw;
+        padding: 20px;
+    }
+    .container{
+        min-width: 100vw;
+        padding: 40px;
+    }
+    .detailsLeft{
+        padding-left: 0 !important;
+        text-transform: capitalize;
+        line-height: 24px;
+    }
+    table {
+        width: 100vw;
         overflow-x: scroll;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
     }
-
-    .maincontainer {
-        min-width: 1440px;
+    .btns-group{
+        width: 250px;
+        padding: 0 20px;
+        margin-top: 30px;
     }
-
+    .tableFooter,.invoice-title{
+        padding: 0 20px;
+    }
+    .deleteRow{
+        margin-left: 20px;
+    }
 }
 
 
