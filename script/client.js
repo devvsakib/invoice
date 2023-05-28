@@ -1,5 +1,7 @@
 $(document).ready(function () {
     let totalPrice = 0;
+    
+    let thisBtn;
     $('.price-input').each(function () {
         let price = parseFloat($(this).val());
         let quantity = parseFloat($(this).closest('tr').find('.quantity-select').val());
@@ -29,6 +31,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.discount-btn', function (event) {
         $('.dropdown').toggle();
+        thisBtn = $(this);
         let buttonPosition = $(this).offset();
         let buttonHeight = $(this).outerHeight();
         let topPosition = buttonPosition.top + buttonHeight;
@@ -75,7 +78,7 @@ $(document).ready(function () {
             return;
         }
 
-        let priceInput = dropdown.data("priceInput");
+        let priceInput = thisBtn.closest("tr").find(".price-input");
         let price = parseFloat(priceInput.val());
         let discountedPrice = 0;
 
@@ -136,11 +139,11 @@ $(document).ready(function () {
           </select>
       </td>
       <td class="text-center">
-      <select class="other-select-des productInp service-select">
-                                                        <option default value="">Select product/item</option>
-                                                        <option value="Services">Services 1</option>
-                                                        <option value="Services" default>Services 2</option>
-                                                    </select>
+        <select class="other-select-des productInp service-select">
+        <option default value="">Select product/item</option>
+            <option value="Services">Services 1</option>
+            <option value="Services" default>Services 2</option>
+        </select>
       </td>
       <td class="text-center">
       <select class="other-select-des duration-select">
@@ -153,10 +156,18 @@ $(document).ready(function () {
       <option value="45">45m</option>
   </select>
       </td>
-      <td colspan="2" class="text-center position-relative totalPrice">
-      <span class="discount-btn otherBTN">Discount</span>
-          <input class="other-select-des-input price-input custom-placeholder" type="text" placeholder="Price Inc VAT">
-      </td>
+  <td colspan="2" class="text-center position-relative totalPrice ">
+  <span class="discount-btn otherBTN">Discount</span>
+  <input class="other-select-des-input price-input custom-placeholder" type="text"
+      placeholder="Price Inc VAT" value="3121">
+  <div class="text-end ddt">
+      <p class="text-right" style="margin-bottom: 0;"><span
+              class="actual-price"></span>
+          <span class="discounted-price"></span>
+      </p>
+      <span class="deducted-price"></span>
+  </div>
+</td>
       <td class="text-end pLeft">
           <span class="deleteRow">
               <img src="./trash.svg" alt="">
@@ -176,7 +187,7 @@ $(document).ready(function () {
         </td>
         <td class="text-center">
         <select class="other-select-des supsurvice service-select">
-        <option default value="">Select Subservices</option>
+        <option default value="">Services</option>
         <option value="Services">Services 1</option>
         <option value="Services" default>Services 2</option>
     </select>
@@ -185,17 +196,24 @@ $(document).ready(function () {
           <select class="other-select-des duration-select">
             <option value="2">2h</option>
             <option value="3">3h</option>
-            <!-- Add more hour options if needed -->
           </select>
           <select class="other-select-des duration-minute-select">
             <option value="30">30m</option>
             <option value="45">45m</option>
           </select>
         </td>
-        <td colspan="2" class="text-center position-relative totalPrice">
-            <span class="discount-btn otherBTN">Discount</span>
-            <input class="other-select-des-input price-input custom-placeholder" type="text" placeholder="Price Inc VAT">
-        </td>
+    <td colspan="2" class="text-center position-relative totalPrice ">
+    <span class="discount-btn otherBTN">Discount</span>
+    <input class="other-select-des-input price-input custom-placeholder" type="text"
+        placeholder="Price Inc VAT" value="3121">
+    <div class="text-end ddt">
+        <p class="text-right" style="margin-bottom: 0;"><span
+                class="actual-price"></span>
+            <span class="discounted-price"></span>
+        </p>
+        <span class="deducted-price"></span>
+    </div>
+</td>
         <td class="text-end pLeft">
             <span class="deleteRow">
                 <img src="./trash.svg" alt="">
@@ -215,22 +233,31 @@ $(document).ready(function () {
             </select>
         </td>
         <td class="text-center">
-            <input class="other-select-des-input otherInput text-center  custom-placeholder" type="text" placeholder="Input">
+        <input class="other-select-des-input otherInput text-center  custom-placeholder" type="text" placeholder="Input">
         </td>
         <td class="text-center">
           <select class="other-select-des duration-select">
             <option value="2">2h</option>
             <option value="3">3h</option>
+            <!-- Add more hour options if needed -->
           </select>
           <select class="other-select-des duration-minute-select">
             <option value="30">30m</option>
             <option value="45">45m</option>
           </select>
         </td>
-        <td colspan="2" class="text-center position-relative totalPrice">
-            <span class="discount-btn otherBTN">Discount</span>
-            <input class="other-select-des-input price-input" type="text" placeholder="Price Inc VAT">
-        </td>
+    <td colspan="2" class="text-center position-relative totalPrice ">
+    <span class="discount-btn otherBTN">Discount</span>
+    <input class="other-select-des-input price-input custom-placeholder" type="text"
+        placeholder="Price Inc VAT" value="3121">
+    <div class="text-end ddt">
+        <p class="text-right" style="margin-bottom: 0;"><span
+                class="actual-price"></span>
+            <span class="discounted-price"></span>
+        </p>
+        <span class="deducted-price"></span>
+    </div>
+</td>
         <td class="text-end pLeft">
             <span class="deleteRow">
                 <img src="./trash.svg" alt="">

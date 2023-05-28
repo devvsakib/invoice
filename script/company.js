@@ -374,7 +374,6 @@ $(document).ready(function () {
 
         // calculate discounted price
 
-        console.log(thisBtn);
 
         let priceInput = thisBtn.closest("tr").find(".price-input");
         let price = parseFloat(priceInput.val());
