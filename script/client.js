@@ -90,7 +90,6 @@ $(document).ready(function () {
         }
 
 
-        // update the price input
         priceInput.val(discountedPrice.toFixed(2) || '');
 
         let actualPrice = price.toFixed(2) + " EUR";
@@ -101,17 +100,13 @@ $(document).ready(function () {
         $totalPrice.find('.discounted-price').text(discountedPrice.toFixed(2) + " EUR");
         $totalPrice.find('.deducted-price').text("- " + deductedPrice);
         $totalPrice.find('.discount-btn').hide();
-        $totalPrice.removeClass("text-center");
 
         priceInput.closest('tr').find('.discount-btn').hide();
-        priceInput.closest('tr').find('.totalPrice').removeClass("totalPricebefore");
-        priceInput.closest('tr').find('.totalPrice').addClass("totalPriceAfter");
-        priceInput.closest('tr').find('.totalPrice').addClass("extraMargin");
         priceInput.hide()
-
+        calculateTotalPrice()
         // clear the dropdown
         dropdown.find('.input-des').val('');
-        dropdown.hide();
+        dropdown.hide(); // Hide the dropdown after saving
     });
 
     $(document).click(function () {
