@@ -428,6 +428,9 @@ select {
     background: transparent;
     color: white rounded;
 }
+.removeDiscount img{
+    width: 13px;
+}
 
 
 @media only screen and (max-width: 1100px) {
