@@ -77,30 +77,37 @@ $(document).ready(function () {
 
     $(document).on('click', '.productBtn', function () {
         let rowHtml = `<tr>
-          <td class="text-right pLeft quant">
-          <select class="quantityOther quantity-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-          </select>
-      </td>
-      <td class="text-center">
-        <select class="other-select-des productInp service-select">
-        <option default value="">Select product/item</option>
-            <option value="Services">Services 1</option>
-            <option value="Services" default>Services 2</option>
-        </select>
-      </td>
-      <td class="text-center">
-      <select class="other-select-des duration-select">
-      <option value="2">2h</option>
-      <option value="3">3h</option>
-      <!-- Add more hour options if needed -->
-  </select>
-  <select class="other-select-des duration-minute-select">
-      <option value="30">30m</option>
-      <option value="45">45m</option>
-  </select>
-      </td>
+        <td class="text-right pLeft quant">
+            <label class="custom-select">
+                <select class="quantityOther quantity-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </label>
+        </td>
+        <td class="text-center">
+            <label class="custom-select">
+                <select class="other-select-des productInp service-select">
+                    <option default value="">Select product/item</option>
+                    <option value="Services">Services 1</option>
+                    <option value="Services" default>Services 2</option>
+                </select>
+            </label>
+        </td>
+        <td class="text-center">
+            <label class="custom-select">
+                <select class="other-select-des duration-select">
+                    <option value="2">2h</option>
+                    <option value="3">3h</option>
+                </select>
+            </label>
+            <label class="custom-select">
+                <select class="other-select-des duration-minute-select">
+                    <option value="30">30m</option>
+                    <option value="45">45m</option>
+                </select>
+            </label>
+        </td>
       <td class="text-center">
       <input class="other-select-des-input text-center vat-input custom-placeholder" type="text"
           placeholder="% VAT">
@@ -129,33 +136,45 @@ $(document).ready(function () {
       </td>
       </tr>`;
         $('.table-body').append(rowHtml);
+        $('.custom-select').each(function () {
+            setupSelector(this);
+        });
     });
 
     $(document).on('click', '.serviceBtn', function () {
         let rowHtml = `<tr>
         <td class="text-right pLeft quant">
+        <label class="custom-select">
             <select class="quantityOther quantity-select">
-                <option value="1">1</option>
+                <option value="1">Select</option>
+                <option value="1" default>1</option>
                 <option value="2">2</option>
             </select>
-        </td>
-        <td class="text-center">
-        <select class="other-select-des supsurvice service-select">
-        <option default value="">Services</option>
-        <option value="Services">Services 1</option>
-        <option value="Services" default>Services 2</option>
-    </select>
-        </td>
-        <td class="text-center">
-          <select class="other-select-des duration-select">
-            <option value="2">2h</option>
-            <option value="3">3h</option>
-          </select>
-          <select class="other-select-des duration-minute-select">
-            <option value="30">30m</option>
-            <option value="45">45m</option>
-          </select>
-        </td>
+        </label>
+    </td>
+    <td class="text-center">
+        <label class="custom-select">
+            <select class="other-select-des supsurvice service-select">
+                <option default>Select Subservice</option>
+                <option value="Services">Services 1</option>
+                <option value="Services" default>Services 2</option>
+            </select>
+        </label>
+    </td>
+    <td class="text-center">
+        <label class="custom-select">
+            <select class="other-select-des duration-select">
+                <option value="2">2h</option>
+                <option value="3">3h</option>
+            </select>
+        </label>
+        <label class="custom-select">
+            <select class="other-select-des duration-minute-select">
+                <option value="30">30m</option>
+                <option value="45">45m</option>
+            </select>
+        </label>
+    </td>
         <td class="text-center">
         <input class="other-select-des-input text-center vat-input custom-placeholder" type="text"
             placeholder="% VAT">
@@ -184,31 +203,40 @@ $(document).ready(function () {
         </td>
       </tr>`;
         $('.table-body').append(rowHtml);
+        $('.custom-select').each(function () {
+            setupSelector(this);
+        });
     });
 
     $(document).on('click', '.otherBtn', function () {
         let rowHtml = `<tr>
         <td class="text-right pLeft quant">
+        <label class="custom-select">
             <select class="quantityOther quantity-select">
+                <option value="1">Select</option>
                 <option value="1" default>1</option>
                 <option value="2">2</option>
-                <option value="3">3</option>
             </select>
-        </td>
-        <td class="text-center">
-        <input class="other-select-des-input otherInput text-center  custom-placeholder" type="text" placeholder="Input">
-        </td>
-        <td class="text-center">
-          <select class="other-select-des duration-select">
-            <option value="2">2h</option>
-            <option value="3">3h</option>
-            <!-- Add more hour options if needed -->
-          </select>
-          <select class="other-select-des duration-minute-select">
-            <option value="30">30m</option>
-            <option value="45">45m</option>
-          </select>
-        </td>
+        </label>
+    </td>
+    <td class="text-center">
+        <input class="other-select-des-input otherInput text-center  custom-placeholder" type="text"
+            placeholder="Input">
+    </td>
+    <td class="text-center">
+        <label class="custom-select">
+            <select class="other-select-des duration-select">
+                <option value="2">2h</option>
+                <option value="3">3h</option>
+            </select>
+        </label>
+        <label class="custom-select">
+            <select class="other-select-des duration-minute-select">
+                <option value="30">30m</option>
+                <option value="45">45m</option>
+            </select>
+        </label>
+    </td>
         <td class="text-center">
         <input class="other-select-des-input text-center vat-input custom-placeholder" type="text"
             placeholder="% VAT">
@@ -237,6 +265,9 @@ $(document).ready(function () {
         </td>
       </tr>`;
         $('.table-body').append(rowHtml);
+        $('.custom-select').each(function () {
+            setupSelector(this);
+        });
     });
 
     $('#save').click(function () {
@@ -439,3 +470,48 @@ $(document).ready(function () {
 
 
 });
+
+$('.custom-select').each(function () {
+    setupSelector(this);
+});
+
+function setupSelector(selector) {
+  selector.addEventListener('change', e => {
+    console.log('changed', e.target.value)
+  })
+
+  selector.addEventListener('mousedown', e => {
+    if(window.innerWidth >= 420) {// override look for non mobile
+      e.preventDefault();
+
+      const select = selector.children[0];
+      const dropDown = document.createElement('ul');
+      dropDown.className = "selector-options";
+
+      [...select.children].forEach(option => {
+        const dropDownOption = document.createElement('li');
+        dropDownOption.textContent = option.textContent;
+
+        dropDownOption.addEventListener('mousedown', (e) => {
+          e.stopPropagation();
+          select.value = option.value;
+          selector.value = option.value;
+          select.dispatchEvent(new Event('change'));
+          selector.dispatchEvent(new Event('change'));
+          dropDown.remove();
+        });
+
+        dropDown.appendChild(dropDownOption);   
+      });
+
+      selector.appendChild(dropDown);
+
+      // handle click out
+      document.addEventListener('click', (e) => {
+        if(!selector.contains(e.target)) {
+          dropDown.remove();
+        }
+      });
+    }
+  });
+}

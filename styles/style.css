@@ -400,37 +400,6 @@ select {
     cursor: pointer;
 }
 
-.selector-options {
-    list-style: none;
-    padding: 5px 0;
-    margin: 0;
-    background: #11436b;
-    color: #fff;
-    border-radius: 4px;
-    z-index: 1;
-    width: 96%;
-    position: absolute;
-    left: 2%;
-    top: 100%;
-}
-
-.selector-options li {
-    height: 35px;
-    display: flex;
-    border-bottom: 1px solid black;
-    align-items: center;
-    padding: 0 15px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.selector-options li:last-child {
-    border-bottom: none
-}
-
-.selector-options li:hover {
-    background: #03A9F4;
-}
 
 .otherInput {
     width: 190px;
@@ -470,4 +439,53 @@ select {
         min-width: 1440px;
     }
 
+}
+
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #888;
+}
+
+
+.custom-select .selector-options {
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    z-index: 1;
+    width: 96%;
+    position: absolute;
+    left: 2%;
+    top: 100%;
+}
+
+.custom-select .selector-options li {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding-left: 20px;
+    box-shadow: 0px 0px 20px rgba(16, 8, 63, 0.09);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.custom-select .selector-options li:first-child {
+    border-radius: 8px 8px 0 0;
+    border-width: 95%;
+}
+.custom-select .selector-options li:last-child {
+    border-radius: 0 0 8px 8px;
+    border-bottom: none;
+}
+
+
+
+.custom-select .selector-options li:hover {
+    background: #eff1f1;
 }

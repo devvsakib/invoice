@@ -88,29 +88,36 @@
 
                                     <tr>
                                         <td class="text-right pLeft quant">
-                                            <select class="quantityOther quantity-select">
-                                                <option value="1">Select</option>
-                                                <option value="1" default>1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <label class="custom-select">
+                                                <select class="quantityOther quantity-select">
+                                                    <option value="1">Select</option>
+                                                    <option value="1" default>1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </label>
                                         </td>
                                         <td class="text-center">
-                                            <select class="other-select-des supsurvice service-select">
-                                                <option default>Select Subservice</option>
-                                                <option value="Services">Services 1</option>
-                                                <option value="Services" default>Services 2</option>
-                                            </select>
+                                            <label class="custom-select">
+                                                <select class="other-select-des supsurvice service-select">
+                                                    <option default>Select Subservice</option>
+                                                    <option value="Services">Services 1</option>
+                                                    <option value="Services" default>Services 2</option>
+                                                </select>
+                                            </label>
                                         </td>
                                         <td class="text-center">
-                                            <select class="other-select-des duration-select">
-                                                <option value="2">2h</option>
-                                                <option value="3">3h</option>
-                                                <!-- Add more hour options if needed -->
-                                            </select>
-                                            <select class="other-select-des duration-minute-select">
-                                                <option value="30">30m</option>
-                                                <option value="45">45m</option>
-                                            </select>
+                                            <label class="custom-select">
+                                                <select class="other-select-des duration-select">
+                                                    <option value="2">2h</option>
+                                                    <option value="3">3h</option>
+                                                </select>
+                                            </label>
+                                            <label class="custom-select">
+                                                <select class="other-select-des duration-minute-select">
+                                                    <option value="30">30m</option>
+                                                    <option value="45">45m</option>
+                                                </select>
+                                            </label>
                                         </td>
                                         <td colspan="2" class="text-center position-relative totalPrice ">
                                             <span class="discount-btn otherBTN">Discount</span>
@@ -174,11 +181,13 @@
         <div class="dropdown">
             <div>
                 <p class="dropText">Discount</p>
-                <select class="select-des text-muted" name="discounttype" id="discounttype">
-                    <option value="">Select fixed or % Discount</option>
-                    <option value="fixed">Fixed Discount</option>
-                    <option value="percentage">% Discount</option>
-                </select>
+                <label class="custom-select">
+                    <select class="select-des text-muted" name="discounttype" id="discounttype">
+                        <option value="">Select fixed or % Discount</option>
+                        <option value="fixed">Fixed Discount</option>
+                        <option value="percentage">% Discount</option>
+                    </select>
+                </label>
             </div>
             <div class="eur-or">
                 <p class="dropText">EUR or %</p>
