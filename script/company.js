@@ -1,6 +1,7 @@
 $(document).ready(function () {
     let totalPrice = 0;
     let totalVat = 0;
+    let thisBtn;
     calculateTotalVat();
     calculateTotalPrice();
     $('#subtotalPrice').text(totalPrice.toFixed(2) + " EUR");
@@ -46,6 +47,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.discount-btn', function (event) {
         $('.dropdown').toggle();
+        thisBtn = $(this);
         let buttonPosition = $(this).offset();
         let buttonHeight = $(this).outerHeight();
         let topPosition = buttonPosition.top + buttonHeight;
@@ -103,10 +105,18 @@ $(document).ready(function () {
       <input class="other-select-des-input text-center vat-input custom-placeholder" type="text"
           placeholder="% VAT">
   </td>
-      <td colspan="2" class="text-center position-relative">
-      <span class="discount-btn otherBTN">Discount</span>
-          <input class="other-select-des-input price-input custom-placeholder" type="text" placeholder="Price Inc VAT">
-      </td>
+  <td colspan="2" class="text-center position-relative totalPrice ">
+  <span class="discount-btn otherBTN">Discount</span>
+  <input class="other-select-des-input price-input custom-placeholder" type="text"
+      placeholder="Price Inc VAT" value="3121">
+  <div class="text-end ddt">
+      <p class="text-right" style="margin-bottom: 0;"><span
+              class="actual-price"></span>
+          <span class="discounted-price"></span>
+      </p>
+      <span class="deducted-price"></span>
+  </div>
+</td>
       <td class="text-end pLeft">
           <span class="deleteRow">
               <img src="./trash.svg" alt="">
@@ -145,10 +155,18 @@ $(document).ready(function () {
         <input class="other-select-des-input text-center vat-input custom-placeholder" type="text"
             placeholder="% VAT">
     </td>
-        <td colspan="2" class="text-center position-relative">
-            <span class="discount-btn otherBTN">Discount</span>
-            <input class="other-select-des-input price-input custom-placeholder" type="text" placeholder="Price Inc VAT">
-        </td>
+    <td colspan="2" class="text-center position-relative totalPrice ">
+    <span class="discount-btn otherBTN">Discount</span>
+    <input class="other-select-des-input price-input custom-placeholder" type="text"
+        placeholder="Price Inc VAT" value="3121">
+    <div class="text-end ddt">
+        <p class="text-right" style="margin-bottom: 0;"><span
+                class="actual-price"></span>
+            <span class="discounted-price"></span>
+        </p>
+        <span class="deducted-price"></span>
+    </div>
+</td>
         <td class="text-end pLeft">
             <span class="deleteRow">
                 <img src="./trash.svg" alt="">
@@ -185,10 +203,18 @@ $(document).ready(function () {
         <input class="other-select-des-input text-center vat-input custom-placeholder" type="text"
             placeholder="% VAT">
     </td>
-        <td colspan="2" class="text-center position-relative">
-            <span class="discount-btn otherBTN">Discount</span>
-            <input class="other-select-des-input price-input" type="text" placeholder="Price Inc VAT">
-        </td>
+    <td colspan="2" class="text-center position-relative totalPrice ">
+    <span class="discount-btn otherBTN">Discount</span>
+    <input class="other-select-des-input price-input custom-placeholder" type="text"
+        placeholder="Price Inc VAT" value="3121">
+    <div class="text-end ddt">
+        <p class="text-right" style="margin-bottom: 0;"><span
+                class="actual-price"></span>
+            <span class="discounted-price"></span>
+        </p>
+        <span class="deducted-price"></span>
+    </div>
+</td>
         <td class="text-end pLeft">
             <span class="deleteRow">
                 <img src="./trash.svg" alt="">
@@ -343,11 +369,14 @@ $(document).ready(function () {
         }
         // check if discount value is number or not
         if (isNaN(discountValue)) {
-            alert('Please enter a valid discount value.');
             return;
         }
 
-        let priceInput = dropdown.data("priceInput");
+        // calculate discounted price
+
+        console.log(thisBtn);
+
+        let priceInput = thisBtn.closest("tr").find(".price-input");
         let price = parseFloat(priceInput.val());
         let discountedPrice = 0;
 
@@ -368,12 +397,8 @@ $(document).ready(function () {
         $totalPrice.find('.discounted-price').text(discountedPrice.toFixed(2) + " EUR");
         $totalPrice.find('.deducted-price').text("- " + deductedPrice);
         $totalPrice.find('.discount-btn').hide();
-        $totalPrice.removeClass("text-center");
 
         priceInput.closest('tr').find('.discount-btn').hide();
-        priceInput.closest('tr').find('.totalPrice').removeClass("totalPricebefore");
-        priceInput.closest('tr').find('.totalPrice').addClass("totalPriceAfter");
-        priceInput.closest('tr').find('.totalPrice').addClass("extraMarginCompany");
         priceInput.hide()
         
         // clear the dropdown
