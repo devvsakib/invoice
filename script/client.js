@@ -180,15 +180,19 @@ $(document).ready(function () {
             <input class="other-select-des-input price-input original-price" type="text" placeholder="Price" value="30">
     
             <div class="text-end ddt">
-                <p class="text-right" style="margin-bottom: 0;"><span class="actual-price"></span>
-                    <span class="discounted-price"></span>
-                </p>
-                <div>
-                    <span class="deducted-price"></span>
-                    <button title="Remove Discount?" class="removeDiscount d-none"><img
-                    src="./cross.svg" /></button>
+                <div class="w-75">
+                    <p class="text-right" style="margin-bottom: 0;"><span
+                            class="actual-price"></span>
+                        <span class="discounted-price"></span>
+                    </p>
+                    <div>
+                        <span class="deducted-price"></span>
+                        <button title="Remove Discount?"
+                            class="removeDiscount d-none"><img
+                            src="./cross.svg" /></button>
                 </div>
             </div>
+        </div>
         </td>
         <td class="text-end pLeft">
             <span class="deleteRow">
@@ -243,14 +247,17 @@ $(document).ready(function () {
                 placeholder="Price" value="30">
 
             <div class="text-end ddt">
-                <p class="text-right" style="margin-bottom: 0;"><span
-                        class="actual-price"></span>
-                    <span class="discounted-price"></span>
-                </p>
-                <div>
-                    <span class="deducted-price"></span>
-                    <button title="Remove Discount?" class="removeDiscount d-none"><img
-                    src="./cross.svg" /></button>
+                <div class="w-75">
+                    <p class="text-right" style="margin-bottom: 0;"><span
+                            class="actual-price"></span>
+                        <span class="discounted-price"></span>
+                    </p>
+                    <div>
+                        <span class="deducted-price"></span>
+                        <button title="Remove Discount?"
+                            class="removeDiscount d-none"><img
+                                src="./cross.svg" /></button>
+                    </div>
                 </div>
             </div>
         </td>
@@ -300,15 +307,19 @@ $(document).ready(function () {
             <input class="other-select-des-input price-input original-price" type="text" placeholder="Price" value="30">
     
             <div class="text-end ddt">
-                <p class="text-right" style="margin-bottom: 0;"><span class="actual-price"></span>
+            <div class="w-75">
+                <p class="text-right" style="margin-bottom: 0;"><span
+                        class="actual-price"></span>
                     <span class="discounted-price"></span>
                 </p>
                 <div>
                     <span class="deducted-price"></span>
-                    <button title="Remove Discount?" class="removeDiscount d-none"><img
-                    src="./cross.svg" /></button>
+                    <button title="Remove Discount?"
+                        class="removeDiscount d-none"><img
+                            src="./cross.svg" /></button>
                 </div>
             </div>
+        </div>
         </td>
         <td class="text-end pLeft">
             <span class="deleteRow">
@@ -426,10 +437,11 @@ $(document).ready(function () {
             });
         });
         $('.btns-group').addClass('d-none');
-        // $('#save').addClass('d-none');
+        $('#save').addClass('d-none');
         $('.discount-btn2').addClass('d-none');
         $('.table-body td.text-end.pLeft').remove();
-
+        let removeDiscount = thisBtn.closest("tr").find(".removeDiscount");
+        removeDiscount.addClass("d-none");
         // Print the JSON object in the console
         console.log(data);
 

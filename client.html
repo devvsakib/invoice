@@ -99,7 +99,7 @@
                                         <td class="text-center">
                                             <label class="custom-select">
                                                 <select class="other-select-des supsurvice service-select">
-                                                    <option default>Select Subservice</option>
+                                                    <option default value="">Select Subservice</option>
                                                     <option value="Services">Services 1</option>
                                                     <option value="Services" default>Services 2</option>
                                                 </select>
@@ -123,18 +123,20 @@
                                             <span class="discount-btn otherBTN">Discount</span>
                                             <input class="other-select-des-input price-input original-price" type="text"
                                                 placeholder="Price" value="30">
-
-                                            <div class="text-end ddt">
-                                                <p class="text-right" style="margin-bottom: 0;"><span
-                                                        class="actual-price"></span>
-                                                    <span class="discounted-price"></span>
-                                                </p>
-                                                <div>
-                                                    <span class="deducted-price"></span>
-                                                    <button title="Remove Discount?" class="removeDiscount d-none"><img
-                                                        src="./cross.svg" /></button>
+                                                <div class="text-end ddt">
+                                                    <div class="w-75">
+                                                        <p class="text-right" style="margin-bottom: 0;"><span
+                                                                class="actual-price"></span>
+                                                            <span class="discounted-price"></span>
+                                                        </p>
+                                                        <div>
+                                                            <span class="deducted-price"></span>
+                                                            <button title="Remove Discount?"
+                                                                class="removeDiscount d-none"><img
+                                                                    src="./cross.svg" /></button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
                                         </td>
                                         <td class="text-end pLeft">
                                             <span class="deleteRow">

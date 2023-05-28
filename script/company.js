@@ -117,15 +117,18 @@ $(document).ready(function () {
   <input class="other-select-des-input price-input original-price" type="text"
       placeholder="Price" value="30">
 
-  <div class="text-end ddt">
-      <p class="text-right" style="margin-bottom: 0;"><span
-              class="actual-price"></span>
-          <span class="discounted-price"></span>
-      </p>
-      <div>
-          <span class="deducted-price"></span>
-          <button title="Remove Discount?" class="removeDiscount d-none"><img
-                                                            src="./cross.svg" /></button>
+      <div class="text-end ddt">
+      <div class="w-75">
+          <p class="text-right" style="margin-bottom: 0;"><span
+                  class="actual-price"></span>
+              <span class="discounted-price"></span>
+          </p>
+          <div>
+              <span class="deducted-price"></span>
+              <button title="Remove Discount?"
+                  class="removeDiscount d-none"><img
+                      src="./cross.svg" /></button>
+          </div>
       </div>
   </div>
 </td>
@@ -184,15 +187,18 @@ $(document).ready(function () {
     <input class="other-select-des-input price-input original-price" type="text"
         placeholder="Price" value="30">
 
-    <div class="text-end ddt">
-        <p class="text-right" style="margin-bottom: 0;"><span
-                class="actual-price"></span>
-            <span class="discounted-price"></span>
-        </p>
-        <div>
-            <span class="deducted-price"></span>
-            <button title="Remove Discount?" class="removeDiscount d-none"><img
-            src="./cross.svg" /></button>
+        <div class="text-end ddt">
+        <div class="w-75">
+            <p class="text-right" style="margin-bottom: 0;"><span
+                    class="actual-price"></span>
+                <span class="discounted-price"></span>
+            </p>
+            <div>
+                <span class="deducted-price"></span>
+                <button title="Remove Discount?"
+                    class="removeDiscount d-none"><img
+                        src="./cross.svg" /></button>
+            </div>
         </div>
     </div>
 </td>
@@ -246,15 +252,18 @@ $(document).ready(function () {
     <input class="other-select-des-input price-input original-price" type="text"
         placeholder="Price" value="30">
 
-    <div class="text-end ddt">
-        <p class="text-right" style="margin-bottom: 0;"><span
-                class="actual-price"></span>
-            <span class="discounted-price"></span>
-        </p>
-        <div>
-            <span class="deducted-price"></span>
-            <button title="Remove Discount?" class="removeDiscount d-none"><img
-            src="./cross.svg" /></button>
+        <div class="text-end ddt">
+        <div class="w-75">
+            <p class="text-right" style="margin-bottom: 0;"><span
+                    class="actual-price"></span>
+                <span class="discounted-price"></span>
+            </p>
+            <div>
+                <span class="deducted-price"></span>
+                <button title="Remove Discount?"
+                    class="removeDiscount d-none"><img
+                        src="./cross.svg" /></button>
+            </div>
         </div>
     </div>
 </td>
@@ -374,6 +383,8 @@ $(document).ready(function () {
                 }
             });
         });
+        let removeDiscount = thisBtn.closest("tr").find(".removeDiscount");
+        removeDiscount.addClass("d-none");
         $('.btns-group').addClass('d-none');
         $('#save').addClass('d-none');
         $('.discount-btn2').addClass('d-none');
