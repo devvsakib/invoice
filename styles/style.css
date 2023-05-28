@@ -453,23 +453,21 @@ select {
     margin-right: -0px !important;
 }
 
-.totalPriceAfter {
-    display: flex;
-    justify-content: center;
+.removeDiscount {
+    border: none;
+    padding: 0 3px;
+    background: transparent;
+    color: white rounded;
 }
 
-.extraMargin {
-    margin-right: -53px !important;
-}
-.extraMarginCompany{
-    margin-right: -30px !important;
-}
+
 @media only screen and (max-width: 1100px) {
-    body{
+    body {
         overflow-x: scroll;
     }
+
     .maincontainer {
         min-width: 1440px;
     }
-    
+
 }
