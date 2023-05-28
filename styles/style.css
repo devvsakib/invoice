@@ -10,13 +10,6 @@ body {
 
 .card {
     margin-top: 40px;
-}
-
-.maincontainer {
-    margin-bottom: 250px;
-}
-
-.card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -39,6 +32,7 @@ body {
     background-color: rgba(0, 0, 0, 0.02);
     padding: 40px 0;
     margin-top: 64px;
+    min-width: 100vw;
     margin-bottom: 40px;
     font-style: normal;
     font-weight: 400;
@@ -147,9 +141,14 @@ tbody>tr>td {
 }
 
 .container {
-    max-width: 1180px;
+    min-width: 1180px;
 }
 
+.maincontainer {
+    margin: 0 auto;
+    margin-bottom: 250px;
+    width: 1440px;
+}
 
 
 .tableFooter {
@@ -464,4 +463,20 @@ select {
 }
 .extraMarginCompany{
     margin-right: -30px !important;
+}
+@media only screen and (max-width: 768px) {
+    body{
+        overflow-x: scroll;
+    }
+  
+
+
+    /* .tableFooter {
+        width: 90%;
+    } */
+
+    .pLeft {
+        padding-right: 20px !important;
+    }
+
 }

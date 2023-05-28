@@ -137,7 +137,7 @@ $(document).ready(function () {
       </td>
       <td class="text-center">
       <select class="other-select-des productInp service-select">
-                                                        <option default>Select product/item</option>
+                                                        <option default value="">Select product/item</option>
                                                         <option value="Services">Services 1</option>
                                                         <option value="Services" default>Services 2</option>
                                                     </select>
@@ -176,7 +176,7 @@ $(document).ready(function () {
         </td>
         <td class="text-center">
         <select class="other-select-des supsurvice service-select">
-        <option default>Select Subservices</option>
+        <option default value="">Select Subservices</option>
         <option value="Services">Services 1</option>
         <option value="Services" default>Services 2</option>
     </select>
@@ -221,7 +221,6 @@ $(document).ready(function () {
           <select class="other-select-des duration-select">
             <option value="2">2h</option>
             <option value="3">3h</option>
-            <!-- Add more hour options if needed -->
           </select>
           <select class="other-select-des duration-minute-select">
             <option value="30">30m</option>
