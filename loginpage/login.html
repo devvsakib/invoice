@@ -56,16 +56,6 @@
         padding: 25px;
     }
 
-    .prof-btn {
-        border: 1px solid rgb(0, 0, 0, 0.3);
-        border-radius: 37px;
-        background: transparent;
-        width: 146px;
-        height: 30px;
-        font-weight: 400;
-        font-size: 15px;
-    }
-
     a {
         text-decoration: none;
         color: #000;
@@ -166,7 +156,8 @@
         opacity: 0.3;
         border: 1px solid #66C68F;
     }
-    input[type="password"]{
+
+    input[type="password"] {
         margin-bottom: 10px;
     }
 
@@ -205,6 +196,52 @@
             background-size: 200px, 200px;
         }
     }
+
+    .lang-btn {
+        border: 1px solid rgb(0, 0, 0, 0.3);
+        border-radius: 37px;
+        background: transparent;
+        width: 70px;
+        font-weight: 400;
+        color: #000000;
+        font-size: 15px;
+        padding: -6px 0px 0px 0px !important;
+        height: 30px;
+    }
+
+    .lang-btn>.btn {
+        margin-top: -5px;
+    }
+
+    .lang-btn>button {
+        outline: none;
+        border: none;
+    }
+
+    .lang-btn>.dropdown-menu {
+        list-style: none;
+        padding: 5px 0;
+        margin: 0;
+        background: #ffffff;
+        color: #000000;
+        border-radius: 4px;
+        z-index: 1;
+        min-width: 90px !important;
+        padding: 0 20px;
+        box-shadow: 0px 0px 20px rgba(16, 8, 63, 0.09);
+        border-radius: 8px;
+    }
+
+    .dropdown-toggle::after {
+        display: inline-block;
+        content: url(./arrow.svg);
+        border-top: 0 solid;
+        border-right: 0 solid transparent;
+        border-bottom: 0;
+        margin-top: -5px;
+        margin-left: 10px;
+        border-left: 0 solid transparent;
+    }
 </style>
 
 <body>
@@ -212,7 +249,17 @@
     <div class="rightCircle"></div>
     <nav class="my-4 container d-flex justify-content-between align-items-center">
         <img class="logo" src="./Logo.svg" alt="logo">
-        <button class="prof-btn">For Professionals</button>
+        <div class="dropdown lang-btn">
+            <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                EN
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li class="p-2">
+                    <a href="https://cynnaenterprises.com/mollure/nl/login">NL</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container loginGroup d-flex justify-content-center">
