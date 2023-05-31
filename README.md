@@ -14,4 +14,5 @@
 
 ## Signup
 
-**Signup : ** https://devvsakib.github.io/mollure-project/signuppage/signup.html <br>
+**Client Signup : ** https://devvsakib.github.io/mollure-project/signuppage/companysignup.html <br>
+**Indi Signup : ** https://devvsakib.github.io/mollure-project/signuppage/indivitualsignup.html <br>
