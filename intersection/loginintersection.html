@@ -1,30 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Intersection</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+<!-- link bootstrap and Image path -->
 <style>
     body {
         font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-top: 70px;
+
+    }
+
+    .title span {
+        display: inline-block;
+        width: 45px;
+        height: 0px;
+        border: 1px solid #66C68F;
+    }
+
+    h4 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #5A5A5A;
+        font-weight: 400;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    .interCard {
+        width: 500px;
+        height: 155px;
+        border: 1px solid #E4E4E4;
+        border-radius: 22px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    a:hover {
+        color: white;
+    }
+
+    .interCard:hover {
+        background: #66C68F;
+        transition: all 200ms ease-in-out;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .interCard:hover p {
+        color: #fff;
+    }
+
+    .interCardGroup {
+        margin-top: 124px;
+        margin-bottom: 216px;
+    }
+
+    .interCardGroupLogin {
+        margin-top: 124px;
+        margin-bottom: 410px;
+    }
+
+    .leftCircle {
+        width: 330.17px;
+        height: 272.62px;
+        position: absolute;
+        left: 50px;
+        top: 400px;
+        background: radial-gradient(50% 50% at 50% 50%, #21B8BF 0%, #21B8BF 19.06%, #21B8BF 40.42%, rgba(217, 217, 217, 0) 100%);
+        opacity: 0.08;
+        z-index: -1;
+        transform: rotate(24.6deg);
+    }
+
+    .rightCircle {
+        position: absolute;
+        width: 301.6px;
+        height: 249.03px;
+        right: 50px;
+        top: 277px;
+        background: radial-gradient(50% 50% at 50% 50%, #66C68F 0%, #66C68F 19.06%, #66C68F 40.42%, rgba(217, 217, 217, 0) 100%);
+        opacity: 0.1;
+        z-index: -1;
+        transform: rotate(24.6deg);
+    }
+
+    body {
+        background: url(./leftShape.svg), url(./rightShape.svg);
+        background-position: left bottom, right bottom;
+        background-repeat: no-repeat;
+        background-size: auto, auto;
+    }
+
+    @media (max-width: 600px) {
+        .interCard {
+            width: 400px;
+        }
+
+        body {
+            background-size: 200px, 200px;
+        }
     }
 </style>
 
@@ -68,5 +152,3 @@
         crossorigin="anonymous"></script>
 
 </body>
-
-</html>
