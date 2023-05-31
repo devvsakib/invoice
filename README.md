@@ -11,3 +11,7 @@
 ## Login
 
 **Login: ** https://devvsakib.github.io/mollure-project/loginpage/login.html <br>
+
+## Signup
+
+**Signup : ** https://devvsakib.github.io/mollure-project/signuppage/signup.html <br>
