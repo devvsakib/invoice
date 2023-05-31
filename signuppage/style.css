@@ -234,12 +234,12 @@ input[type="password"] {
 .block-heading {
     background: #21B8BF;
     border-radius: 5px;
-    height: 44px;
+    height: 43px;
     font-weight: 600;
     color: #fff;
     margin-top: 40px;
     font-size: 17px;
-    padding: 8px 0 11px 15px;
+    padding: 8px 0 11px 19px;
 }
 
 .signup-card {
