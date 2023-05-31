@@ -79,7 +79,8 @@ label {
     color: #5A5A5A;
 }
 
-input {
+input,
+select {
     font-style: normal;
     font-weight: 400;
     font-size: 14px !important;
@@ -160,21 +161,7 @@ input[type="password"] {
     font-size: 14px;
 }
 
-@media (max-width: 600px) {
 
-    .login-card,
-    .signup-card {
-        width: 400px;
-    }
-
-    .mollure-select {
-        width: 350px;
-    }
-
-    body {
-        background-size: 200px, 200px;
-    }
-}
 
 .lang-btn {
     border: 1px solid rgb(0, 0, 0, 0.3);
@@ -264,7 +251,8 @@ input[type="password"] {
     color: #000 !important;
 }
 
-.mollure-select {
+.mollure-select,
+.mollure-select-address {
     box-sizing: border-box;
     padding: 20px;
     padding-top: 5px;
@@ -275,19 +263,29 @@ input[type="password"] {
     min-width: calc(495px - 50px);
     font-weight: 400;
     font-size: 14px;
-    height: 40px;
+    height: 50px;
     text-transform: capitalize;
     -moz-appearance: none;
-    /* Firefox */
     -webkit-appearance: none;
-    /* Safari and Chrome */
     appearance: none;
     background-image: url('./select-down-arrow.svg');
     background-repeat: no-repeat;
     background-position-x: 410px;
     background-position-y: center;
     padding-right: 20px !important;
-    color: #5A5A5A;
+    color: #5A5A5A !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+}
+
+.mollure-select-address {
+    min-width: 223px !important;
+    height: 48px;
+    background-position-x: 190px;
 }
 
 .custom-select {
@@ -334,4 +332,34 @@ input[type="password"] {
 
 .custom-select .selector-options li:hover {
     background: #f5f5f59a;
+}
+
+.custom-select-address .selector-options {
+    width: 100% !important;
+}
+@media (max-width: 600px) {
+
+    .login-card,
+    .signup-card {
+        width: 400px;
+    }
+
+    .mollure-select {
+        min-width: 350px;
+        background-position-x: 313px;
+    }
+    .leftCircle{
+        display: none;
+    }
+    .rightCircle{
+        display: none;
+    }
+    .mollure-select-address {
+        min-width: 175px !important;
+        background-position-x: 140px;
+    }
+
+    body {
+        background-size: 200px, 200px;
+    }
 }

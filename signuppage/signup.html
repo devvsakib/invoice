@@ -70,41 +70,72 @@
                 <form class="d-grid gap-1 interCardGroupLogin">
                     <div class="">
                         <label for="email" class="form-label">Legal Name</label>
-                        <input type="email" placeholder="Enter Legal Name" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <input type="email" placeholder="Enter Legal Name" class="form-control" id="email">
                     </div>
                     <div class="">
                         <label for="email" class="form-label">COC Number</label>
-                        <input type="email" placeholder="Enter COC Number" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <input type="email" placeholder="Enter COC Number" class="form-control" id="email">
                     </div>
                     <div class="">
                         <label for="email" class="form-label">VAT Number</label>
-                        <input type="email" placeholder="Enter VAT Number" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <input type="email" placeholder="Enter VAT Number" class="form-control" id="email">
                     </div>
                     <div class="">
                         <label for="email" class="form-label">Address</label>
-                        <input type="email" placeholder="Enter Address" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <div class="row px-1">
+                            <div class="col-6 px-1 mb-2">
+                                <input type="text" placeholder="Street" class="form-control" id="firstname">
+                            </div>
+                            <div class="col-6 px-1">
+                                <input type="text" placeholder="Number" class="form-control" id="lastname">
+                            </div>
+                            <div class="col-6 px-1 mb-2">
+                                <input type="text" placeholder="Postal code" class="form-control" id="lastname">
+                            </div>
+                            <div class="col-6 px-1">
+                                <label class="custom-select custom-select-address">
+                                    <select class="mollure-select-address">
+                                        <option value="">Province</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="col px-1">
+                                <label class="custom-select custom-select-address">
+                                    <select class="mollure-select-address">
+                                        <option value="">Municipality</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="">
-                        <label for="email" class="form-label">Contact Person</label>
-                        <input type="email" placeholder="Enter Address" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <label for="firstname" class="form-label">Contact Person</label>
+                        <div class="row px-1">
+                            <div class="col px-1">
+                                <input type="text" placeholder="First Name" class="form-control" id="firstname">
+                            </div>
+                            <div class="col px-1">
+                                <input type="text" placeholder="Last Name" class="form-control" id="lastname">
+                            </div>
+                        </div>
                     </div>
                     <div class="">
-                        <label for="email" class="form-label">Contact Number</label>
-                        <input type="email" placeholder="Enter Contact Number" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <label for="contactnumber" class="form-label">Contact Number</label>
+                        <input type="text" placeholder="Enter Contact Number" class="form-control" id="contactnumber">
                     </div>
                     <div class="">
                         <div>
-                            <label for="email" class="form-label">Gender</label>
+                            <label class="form-label">Gender</label>
                         </div>
                         <label class="custom-select">
                             <select class="mollure-select">
-                                <option value="gender">Gender</option>
+                                <option value="">Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="prefernottosay">Prefer not to say</option>
@@ -113,8 +144,7 @@
                     </div>
                     <div class="">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" placeholder="Enter Email" class="form-control" id="email"
-                            aria-describedby="emailHelp">
+                        <input type="email" placeholder="Enter Email" class="form-control" id="email">
                     </div>
                     <div class="">
                         <label for="password" class="form-label">Password</label>
