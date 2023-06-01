@@ -370,32 +370,32 @@ input[type="checkbox"]+label::before {
     transform: rotate(45deg);
 }
 
- /* Create a custom checkbox */
- .custom_check input {
+/* Create a custom checkbox */
+.custom_check input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+}
 
-  .checkmark:after {
+.checkmark:after {
     content: "";
     /*position: absolute;*/
     display: none;
-  }
+}
 
-  .custom_check input:checked~.checkmark:after {
+.custom_check input:checked~.checkmark:after {
     display: block;
-  }
+}
 
-  .custom_check input:checked~.checkmark {
+.custom_check input:checked~.checkmark {
     border: 1px solid #66C68F !important;
-  }
+}
 
-  .service_for_checkbox_container label .checkmark,
-  .gen_note_tbl label .checkmark,
-  #team_mem_f_sec label .checkmark {
+.service_for_checkbox_container label .checkmark,
+.gen_note_tbl label .checkmark,
+#team_mem_f_sec label .checkmark {
     height: 15px;
     width: 15px;
     background-color: #fff;
@@ -404,9 +404,9 @@ input[type="checkbox"]+label::before {
     border: 1px solid #e5e5e5;
     border-radius: 2px;
     vertical-align: middle;
-  }
+}
 
-  .vis_sel_p label .checkmark {
+.vis_sel_p label .checkmark {
     height: 15px;
     width: 15px;
     /* background-color: #fff; */
@@ -415,9 +415,9 @@ input[type="checkbox"]+label::before {
     border: 1px solid #b1b1b1;
     border-radius: 2px;
     vertical-align: middle;
-  }
+}
 
-  .des_loc_type_sec label.custom_check .checkmark {
+.des_loc_type_sec label.custom_check .checkmark {
     height: 18px;
     width: 18px;
     /* background-color: #fff; */
@@ -426,9 +426,9 @@ input[type="checkbox"]+label::before {
     border: 1px solid #b1b1b1;
     border-radius: 2px;
     vertical-align: middle;
-  }
+}
 
-  .checkmark:after {
+.checkmark:after {
     /*left: 9px;
       top: 5px;*/
     margin-left: 4px;
@@ -440,25 +440,26 @@ input[type="checkbox"]+label::before {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
-  .des_loc_type_sec label.custom_check .checkmark:after {
+.des_loc_type_sec label.custom_check .checkmark:after {
     margin-left: 5px;
     width: 5px;
     margin-top: 2px;
-  }
+}
 
-  .custom_sel ul.time_ul li input:checked~.checkmark {
+.custom_sel ul.time_ul li input:checked~.checkmark {
     border-color: #66C68F;
-  }
+}
 
 #file-chosen {
     margin-left: 0.3rem;
     font-family: sans-serif;
 }
-.custom-file-select .chosefile{
+
+.custom-file-select .chosefile {
     background: #eeebeb !important;
-    padding: 10px 20px !important; 
+    padding: 10px 20px !important;
     border-radius: 8px;
 }
 
@@ -491,11 +492,14 @@ input[type="checkbox"]+label::before {
         background-size: 200px, 200px;
     }
 }
+
 @media (max-width: 450px) {
+
     .login-card,
     .signup-card {
         width: 95vw;
     }
+
     .mollure-select {
         min-width: calc(100vw - 90px);
         background-position-x: 230px;
