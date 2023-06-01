@@ -21,6 +21,10 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -102,7 +106,8 @@
                             registration in Chamber of e-Commerce </label>
                         <input type="file" id="uploadfile" hidden />
                         <div class="custom-file-select">
-                            <label class="chosefile" for="uploadfile"><img src="./upload.svg" alt="Upload Doc" srcset=""></label>
+                            <label class="chosefile" for="uploadfile"><img src="./upload.svg" alt="Upload Doc"
+                                    srcset=""></label>
                             <label id="file-chosen">No file chosen</label>
                         </div>
                         <!-- <input type="file" class="form-control" id="uploadfile"> -->
@@ -164,9 +169,13 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-content-center mb-4 mt-2">
+                    <div
+                        class="d-flex service_for_checkbox_container justify-content-between align-content-center mb-4 mt-2">
                         <div class="d-flex justify-content-between align-content-center gap-2">
-                            <input type="checkbox" name="remember" id="agree">
+                            <label class="custom_check form-check-label" for="agree">
+                                <input class="me-3 serv_for_fx_inp" type="checkbox" name="agree" value="" id="agree" />
+                                &nbsp;<span class="checkmark"></span>
+                            </label>
                             <p>Accept our <label form="agree" class="text-decoration-underline tnc">"Terms &
                                     conditions"</label></p>
                         </div>
@@ -191,7 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script type="text/javascript">
         const actualBtn = document.getElementById('uploadfile');
