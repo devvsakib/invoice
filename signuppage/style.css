@@ -127,7 +127,6 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
     outline: none;
     cursor: pointer;
-    opacity: 0.3;
     border: 1px solid #66C68F;
 }
 
