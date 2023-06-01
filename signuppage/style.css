@@ -383,3 +383,19 @@ select:focus {
         background-size: 200px, 200px;
     }
 }
+@media (max-width: 450px) {
+    .login-card,
+    .signup-card {
+        width: 95vw;
+    }
+    .mollure-select {
+        min-width: calc(100vw - 90px);
+        background-position-x: 230px;
+    }
+
+    .mollure-select-address {
+        min-width: 135px !important;
+        background-position-x: 100px;
+    }
+
+}
