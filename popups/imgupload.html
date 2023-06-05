@@ -26,15 +26,15 @@
 <body>
     <!-- Img Popup -->
     <div class="popupContainer imgPopUp">
-        <div class="popup text-center">
+        <div class="popup mx-auto text-center">
             <div class="d-flex justify-content-center title-area align-items-center position-relative">
                 <h3 class="poptitle mb-0">Upload Image</h3>
                 <button class="popclose"><img src="./close.svg" /></button>
             </div>
             <div class="upload-area d-flex justify-content-center align-items-center">
                 <div class="mt-3">
-                    <label for="fileInput" class="upload-label">
-                        <img src="./uploadfile.svg" alt="">
+                    <label for="fileInput" class="upload-label text-center">
+                        <img src="./uploadfile.svg" class="mb-2">
                         <div class="upload-text">
                             <p style="font-weight: 400;font-size: 16px;">Drag Your Images to Upload <br>
                                 or <span class="text-decoration-underline upload"
@@ -51,7 +51,7 @@
 
     <!-- Location Popup -->
     <div class="popupContainer locationPopUp">
-        <div class="popup  text-center">
+        <div class="popup mx-auto text-center">
             <div class="d-flex justify-content-center title-area align-items-center position-relative">
                 <h3 class="poptitle mb-0">Add Location</h3>
                 <button class="popclose"><img src="./close.svg" /></button>
@@ -71,7 +71,7 @@
                 </div>
                 <div>
                     <div class="d-flex gap-2">
-                        <div class="col-6 px-0">
+                        <div class="col-6 px-0 ms-2">
                             <label class="custom-select custom-select-address">
                                 <select class="mollure-select-address">
                                     <option value="">Province</option>
@@ -98,9 +98,74 @@
         </div>
     </div>
 
+    <!-- Desire Location Popup -->
+    <div class="popupContainer dslocationPopUp">
+        <div class="popups mx-auto  text-center">
+            <div class="d-flex justify-content-center title-area align-items-center position-relative">
+                <h3 class="poptitle mb-0">Add Location</h3>
+                <button class="popclose"><img src="./close.svg" /></button>
+            </div>
+            <form class="d-grid  gap-2">
+                <div class="province-sec">
+                    <div class="d-flex align-items-center justify-content-between srv">
+                        <div class="d-flex gap-1">
+                            <div class="px-0">
+                                <label class="custom-select custom-select-address">
+                                    <select class="mollure-select-address tmct">
+                                        <option value="">Municipality</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class=" px-0 ">
+                                <div class="services-container position-relative">
+                                    <div class="service-selector d-flex justify-content-between align-items-center p-3">
+                                        <p class="mb-0">Municipality</p>
+                                        <img src="./select-down-arrow.svg" alt="">
+                                    </div>
+                                    <ul class="service-items position-absolute">
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <span type="button" class="dlt_btn">
+                            <img src="./trash.svg" alt="">
+                        </span>
+                    </div>
+                </div>
+                <p class="text-end mb-0">
+                    <button type="button" id="addprovince" class="d-inline-block">
+                        <img src="./plus.svg" alt=""> Province
+                    </button>
+                </p>
+            </form>
+            <button class="pop-button">save</button>
+        </div>
+    </div>
+
     <!-- Add Team Member -->
     <div class="popupContainer teammemberPopUp">
-        <div class="popup  text-center">
+        <div class="popup mx-auto text-center">
             <div class="d-flex justify-content-center title-area align-items-center position-relative">
                 <h3 class="poptitle mb-0">Add Team Member</h3>
                 <button class="popclose"><img src="./close.svg" /></button>
@@ -120,7 +185,7 @@
                     <input type="text" placeholder="Bio" class="form-control" id="">
                 </div>
                 <div class="addservices">
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-between srv">
                         <div class="d-flex gap-1">
                             <div class="px-0">
                                 <label class="custom-select custom-select-address">
@@ -161,12 +226,12 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="dlt_btn">
+                        <span type="button" class="dlt_btn">
                             <img src="./trash.svg" alt="">
-                        </button>
+                        </span>
                     </div>
                 </div>
-                <p>
+                <p class="text-end mb-0">
                     <button type="button" id="addcatsurvice" class="d-inline-block">
                         <img src="./plus.svg" alt=""> Category
                     </button>
@@ -177,10 +242,185 @@
     </div>
 
 
+    <!-- Add Sub Survice -->
+    <div class="popupContainer subsurvicePopUp">
+        <div class="popup mx-auto text-center">
+            <div class="d-flex justify-content-center title-area align-items-center position-relative">
+                <h3 class="poptitle mb-0">Add Subservice</h3>
+                <button class="popclose"><img src="./close.svg" /></button>
+            </div>
+            <form class="d-grid  gap-2">
+                <div class="">
+                    <input type="text" placeholder="(sub)service name" class="form-control" id="contactnumber">
+                </div>
+                <div class="txarea position-relative">
+                    <textarea type="text" placeholder="Info" class="form-control" id=""></textarea>
+                    <img src="./warning.svg" class="tshow">
+                    <span id="ttip" class="ttp12">Lorem Ispum</span>
+                </div>
+                <div class="text-start">
+                    <label for="" class="mb-2">Duration</label>
+                    <div class="d-flex gap-1 align-items-center">
+                        <div class="px-0">
+                            <label class="custom-select custom-select-address">
+                                <select class="mollure-select-address frm">
+                                    <option value="">From</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </label>
+                        </div>
+                        <span class="sp">
+                            -
+                        </span>
+                        <div class="px-0">
+                            <label class="custom-select custom-select-address">
+                                <select class="mollure-select-address frmto">
+                                    <option value="">To</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-start">
+                    <div class="px-0">
+                        <label class="custom-select custom-select-address">
+                            <select class="mollure-select-address stprice">
+                                <option value="">Select starting price or fixed price</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Price" class="form-control" id="contactnumber">
+                </div>
+                <div class="text-start">
+                    <div class="px-0">
+                        <label class="custom-select custom-select-address">
+                            <select class="mollure-select-address stprice">
+                                <option value="">Select fixed or percentage discount</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Price" class="form-control" id="contactnumber">
+                </div>
+                <div class="text-start">
+                    <div class="px-0">
+                        <label class="custom-select custom-select-address">
+                            <select class="mollure-select-address stprice">
+                                <option value="">Date – Date</option>
+                                <option value="lorem">10 Feb - 12 Jan</option>
+                                <option value="lorem">10 Feb - 12 Jan</option>
+                                <option value="lorem">10 Feb - 12 Jan</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="position-relative tt">
+                    <input type="text" placeholder="Info" class="form-control" id="contactnumber">
+                    <img src="./warning.svg" class="inf">
+                    <span id="ttip">Lorem Ispum</span>
+                </div>
+            </form>
+            <button class="pop-button">save</button>
+        </div>
+    </div>
 
-
-
-
+    <!-- Add Survice -->
+    <div class="popupContainer survicePopUp">
+        <div class="popup mx-auto text-center">
+            <div class="d-flex justify-content-center title-area align-items-center position-relative">
+                <h3 class="poptitle mb-0">Add Service</h3>
+                <button class="popclose"><img src="./close.svg" /></button>
+            </div>
+            <form class="d-grid  gap-2">
+                <div class="">
+                    <input type="text" placeholder="(sub)service name" class="form-control" id="contactnumber">
+                </div>
+                <div class="txarea position-relative">
+                    <textarea type="text" rows="4" placeholder="Info" class="resizes form-control" id=""></textarea>
+                    <img src="./warning.svg" class="tshow">
+                    <span id="ttip" class="ttp12">Lorem Ispum</span>
+                </div>
+                <div class="text-start">
+                    <label for="" class="mb-2">Duration</label>
+                    <div class="d-flex gap-1 align-items-center">
+                        <div class="px-0">
+                            <label class="custom-select custom-select-address">
+                                <select class="mollure-select-address frm">
+                                    <option value="">From</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </label>
+                        </div>
+                        <span class="sp">
+                            -
+                        </span>
+                        <div class="px-0">
+                            <label class="custom-select custom-select-address">
+                                <select class="mollure-select-address frmto">
+                                    <option value="">To</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Price" class="form-control" id="contactnumber">
+                </div>
+                <div class="text-start">
+                    <div class="px-0">
+                        <label class="custom-select custom-select-address">
+                            <select class="mollure-select-address stprice">
+                                <option value="">Select fixed or percentage discount</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                                <option value="lorem">Lorem</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Price" class="form-control" id="contactnumber">
+                </div>
+                <div class="text-start">
+                    <div class="px-0">
+                        <label class="custom-select custom-select-address">
+                            <select class="mollure-select-address stprice">
+                                <option value="">Date – Date</option>
+                                <option value="lorem">10 Feb - 12 Jan</option>
+                                <option value="lorem">10 Feb - 12 Jan</option>
+                                <option value="lorem">10 Feb - 12 Jan</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="position-relative tt">
+                    <input type="text" placeholder="Info" class="form-control" id="contactnumber">
+                    <img src="./warning.svg" class="inf">
+                    <span id="ttip">Lorem Ispum</span>
+                </div>
+            </form>
+            <button class="pop-button">save</button>
+        </div>
+    </div>
 
     <!-- POP ACTION -->
     <div class="container">
@@ -188,8 +428,10 @@
             <div class="col-12 text-center">
                 <button class="pop-button imgPop">Image POP</button>
                 <button class="pop-button lcPop">Add Location POP</button>
+                <button class="pop-button dlcPop">Add Desire Location POP</button>
                 <button class="pop-button tmPop">Add Team Member POP</button>
-                <button class="pop-button">Address POP</button>
+                <button class="pop-button svPop">Add Survice POP</button>
+                <button class="pop-button ssvPodlcPopp">Add Sub Survice POP</button>
             </div>
         </div>
     </div>
@@ -228,13 +470,22 @@
             $('.tmPop').click(function () {
                 $('.teammemberPopUp').fadeIn();
             });
+            $('.ssvPop').click(function () {
+                $('.subsurvicePopUp').fadeIn();
+            });
+            $('.svPop').click(function () {
+                $('.survicePopUp').fadeIn();
+            });
+            $('.dlcPop').click(function () {
+                $('.dslocationPopUp').fadeIn();
+            });
             $('.popclose').click(function () {
                 $('.popupContainer').fadeOut();
             })
 
             $("#addcatsurvice").click(function () {
                 let html = `
-                <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex mt-2 align-items-center justify-content-between srv">
                         <div class="d-flex gap-1">
                             <div class="px-0">
                                 <label class="custom-select custom-select-address">
@@ -275,16 +526,88 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="dlt_btn">
+                        <span class="dlt_btn">
                             <img src="./trash.svg" alt="">
-                        </button>
+                        </span>
                     </div>`
                 $(".addservices").append(html);
+                $('.custom-select').each(function () {
+                    setupSelector($(this));
+                });
+                $('.dlt_btn').on('click', function () {
+                    $(this).closest('.srv').remove();
+                });
             })
+          
+            $("#addprovince").click(function () {
+                let html = `
+                <div class="d-flex mt-2 align-items-center justify-content-between srv">
+                        <div class="d-flex gap-1">
+                            <div class="px-0">
+                                <label class="custom-select custom-select-address">
+                                    <select class="mollure-select-address tmct">
+                                        <option value="">Province</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class=" px-0">
+                                <div class="services-container position-relative">
+                                    <div class="service-selector d-flex justify-content-between align-items-center p-3">
+                                        <p class="mb-0">Municipality</p>
+                                        <img src="./select-down-arrow.svg" alt="">
+                                    </div>
+                                    <ul class="service-items position-absolute">
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="dlt_btn">
+                            <img src="./trash.svg" alt="">
+                        </span>
+                    </div>`
+                $(".province-sec").append(html);
+                $('.custom-select').each(function () {
+                    setupSelector($(this));
+                });
+                $('.dlt_btn').on('click', function () {
+                    $(this).closest('.srv').remove();
+                });
+            })
+          
+            $('.dlt_btn').on('click', function () {
+                $(this).closest('.srv').remove();
+            });
+            $('.custom-select').each(function () {
+                setupSelector($(this));
+            });
+            $('.service-selector').click(function () {
+                $(this).toggleClass('open');
+            });
 
-        });
-        $('.custom-select').each(function () {
-            setupSelector($(this));
+            $('.item').click(function () {
+                $(this).toggleClass('checked');
+            });
         });
         function setupSelector(selector) {
             selector.on('change', function (e) {
@@ -326,13 +649,7 @@
             });
         }
 
-        $('.service-selector').click(function () {
-            $(this).toggleClass('open');
-        });
 
-        $('.item').click(function () {
-            $(this).toggleClass('checked');
-        });
 
         $(document).click(function (event) {
             var target = $(event.target);

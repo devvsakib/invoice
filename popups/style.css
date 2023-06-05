@@ -1,44 +1,19 @@
-body {
-    font-family: 'Playfair Display', serif;
-    background: url(./leftShape.svg), url(./rightShape.svg);
-    background-position: left bottom, right bottom;
-    background-repeat: no-repeat;
-    background-size: auto, auto;
-}
-
-.container {
-    max-width: 1200px;
-}
-
-h4 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #5A5A5A;
-    font-weight: 400;
-    margin-bottom: 20px;
-    font-size: 12px;
-}
-
 .popupContainer {
     min-width: 100vw;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
     position: absolute;
     background: rgb(0, 0, 0, 0.2);
     top: 0;
     left: 0;
+    overflow-x: scroll;
 }
 
 .popup {
     background: #FFFFFF;
     border-radius: 12px;
     width: 446px !important;
-    /* margin-top: 45px; */
+    margin-top: 130px;
     padding: 25px;
 }
 
@@ -94,6 +69,15 @@ p {
     color: white;
     margin-top: 40px;
 }
+
+.imgPopUp .popup {
+    height: 400px;
+}
+
+.locationPopUp .popup {
+    height: 500px;
+}
+
 
 input,
 select {
@@ -206,6 +190,7 @@ input:focus {
     margin-bottom: 10px;
     cursor: pointer;
 }
+
 .tmprofile img {
     cursor: pointer;
 
@@ -213,8 +198,11 @@ input:focus {
 
 /* target checkbox */
 .teammemberPopUp .popup {
-    margin-top: -20px;
-    /* max-height: 515px; */
+    max-height: 520px;
+    min-height: 520px;
+    overflow-y: scroll;
+    margin-top: 130px;
+
 }
 
 .service-selector p {
@@ -241,7 +229,7 @@ input:focus {
     border-radius: 2px;
 }
 
-.service-items{
+.service-items {
     background: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(16, 8, 63, 0.09);
     border-radius: 8px;
@@ -249,6 +237,7 @@ input:focus {
     overflow-y: scroll;
     padding: 5px 15px 0px 10px;
     display: none;
+    z-index: 999;
 }
 
 .service-items li {
@@ -256,6 +245,7 @@ input:focus {
     cursor: pointer;
     border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
+
 .service-items li:hover {
     background: #f5f5f59a;
 }
@@ -273,25 +263,147 @@ input:focus {
 .sv-checkbox .check-icon {
     transform: scale(0) !important;
 }
+
 .item.checked .sv-checkbox {
     border: 1px solid #66C68F;
     transform: scale(1) !important;
 }
+
 .item.checked .check-icon {
     transform: scale(1) !important;
 }
-.service-selector.open ~ .service-items {
+
+.service-selector.open~.service-items {
     display: block;
 }
-.dlt_btn{
+
+.dlt_btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
     position: relative;
     left: 5px;
 }
-.tmct{
+
+.tmct {
     margin-left: 2px;
     width: 170px;
     background-position-x: 130px;
+}
+
+#addcatsurvice, #addprovince {
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90.14deg, rgba(102, 198, 143, 0.1) 1.34%, rgba(33, 184, 191, 0.1) 99.89%);
+    border-radius: 55px;
+    color: #21B8BF;
+    padding: 5px 13px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* sub service */
+.subsurvicePopUp .popup {
+    min-height: auto;
+    margin-top: 130px;
+    margin-bottom: 100px;
+}
+.survicePopUp .popup {
+    margin-bottom: 100px;
+}
+
+.subsurvicePopUp .popup textarea {
+    height: 100px;
+    resize: none;
+}
+
+.txarea img {
+    position: absolute;
+    width: 20px;
+    right: 5px;
+    top: 7px;
+}
+
+.txarea textarea {
+    border: 1px solid #E4E4E4 !important;
+    border-radius: 8px !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}
+
+.sp {
+    color: #000000;
+    opacity: 0.6;
+    margin: 0 5px;
+}
+
+label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #5A5A5A;
+    text-align: start;
+}
+
+.frm {
+    width: 185px;
+    margin-left: 1px;
+    background-position-x: 150px;
+}
+
+.frmto {
+    margin-left: 2px;
+    width: 185px;
+    background-position-x: 150px;
+}
+
+.stprice {
+    width: 100%;
+    background-position-x: 354px;
+    margin-left: 0px;
+}
+
+.inf {
+    position: absolute;
+    top: 30%;
+    width: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#ttip {
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    border-radius: 6px;
+    color: #66C68F;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 7px 8px;
+    position: absolute;
+    right: 10px;
+    top:35px;
+    filter: drop-shadow(0px 4px 20px rgba(5, 8, 63, 0.11));
+    display: none;
+}
+.inf:hover + #ttip{
+    display: block;
+}
+.tshow:hover + #ttip{
+    display: block;
+}
+.resizes {
+    resize: none !important;
+}
+.custom-select .selector-options {
+    width: 230px !important;
+}
+.dslocationPopUp .popups {
+    min-height: 300px !important;
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: 446px !important;
+    margin-top: 130px;
+    padding: 25px;
 }
