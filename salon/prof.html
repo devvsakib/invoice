@@ -26,6 +26,44 @@
 
     </style>
 </head>
+<style>
+    .tooltip {
+        /*display: inline-block !important;*/
+        opacity: 1 !important;
+        font-size: 15px !important;
+        position: relative !important;
+        /*top: -20px;*/
+        /*display: none !important;*/
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        color: #ffffff;
+        text-align: center;
+        padding: 5px 5px;
+        border-radius: 3px;
+        top: 5px;
+        position: absolute;
+        z-index: 1;
+        border: 1px solid #fff;
+        left: 0px;
+        width: 200px;
+        /*min-width: 100%;*/
+        background-color: #0d9da3;
+    }
+
+    .tooltip_spn,
+    .tooltip_spn1 {
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /*.tooltip_spn_1{    float: right;margin-top: -28px;}*/
+    .tooltip_spn:hover+.tooltip .tooltiptext,
+    .tooltip_spn1:hover+.tooltip .tooltiptext {
+        visibility: visible;
+    }
+</style>
 
 <body>
     <div class="leftCircle"></div>
@@ -55,7 +93,14 @@
                 </div>
                 <form class="d-grid gap-1 interCardGroupLogin">
                     <div class="">
-                        <label for="email" class="form-label">Legal Name</label>
+                        <label for="email" class="form-label position-relative">Legal Name
+                            <i class="ri-information-fill tooltip_spn1 tooltip_spn_1"><img src="./warning.svg" /></i>
+                            <div class="tooltip">
+                                <span class="tooltiptext">
+                                    <small>{{$lang_kwords['name-with-a-legal-form']['english']}}</small>
+                                </span>
+                            </div>
+                        </label>
                         <input type="email" placeholder="Enter Legal Name" class="form-control" id="email">
                     </div>
                     <div class="">
@@ -243,52 +288,52 @@
             }
         }
 
-        let customSelects = document.querySelectorAll('.custom-select');
+        $(document).ready(function () {
+            $('.custom-select').each(function () {
+                setupSelector($(this));
+            });
 
-        customSelects.forEach(function (select) {
-            setupSelector(select);
-        });
+            function setupSelector(selector) {
+                selector.on('change', function (e) {
+                    console.log('changed', e.target.value);
+                });
 
-        function setupSelector(selector) {
-            selector.addEventListener('change', e => {
-                console.log('changed', e.target.value)
-            })
+                selector.on('mousedown', function (e) {
+                    if (window.innerWidth >= 420) { // override look for non-mobile
+                        e.preventDefault();
 
-            selector.addEventListener('mousedown', e => {
-                if (window.innerWidth >= 420) {// override look for non mobile
-                    e.preventDefault();
+                        const select = selector.children().eq(0);
+                        const dropDown = $('<ul>').addClass('selector-options');
 
-                    const select = selector.children[0];
-                    const dropDown = document.createElement('ul');
-                    dropDown.className = "selector-options";
+                        select.children().each(function () {
+                            const option = $(this);
+                            const dropDownOption = $('<li>').text(option.text());
 
-                    [...select.children].forEach(option => {
-                        const dropDownOption = document.createElement('li');
-                        dropDownOption.textContent = option.textContent;
+                            dropDownOption.on('mousedown', function (e) {
+                                e.stopPropagation();
+                                select.val(option.val());
+                                selector.val(option.val());
+                                select.trigger('change');
+                                selector.trigger('change');
+                                dropDown.remove();
+                            });
 
-                        dropDownOption.addEventListener('mousedown', (e) => {
-                            e.stopPropagation();
-                            select.value = option.value;
-                            selector.value = option.value;
-                            select.dispatchEvent(new Event('change'));
-                            selector.dispatchEvent(new Event('change'));
-                            dropDown.remove();
+                            dropDown.append(dropDownOption);
                         });
 
-                        dropDown.appendChild(dropDownOption);
-                    });
+                        selector.append(dropDown);
 
-                    selector.appendChild(dropDown);
+                        // handle click out
+                        $(document).on('click', function (e) {
+                            if (!selector.is(e.target) && !selector.has(e.target).length) {
+                                dropDown.remove();
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
-                    // handle click out
-                    document.addEventListener('click', (e) => {
-                        if (!selector.contains(e.target)) {
-                            dropDown.remove();
-                        }
-                    });
-                }
-            });
-        }
     </script>
 
 </body>

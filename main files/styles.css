@@ -270,15 +270,20 @@ nav.navbar-mobile {
 }
 
 .gradient-btn {
-    background: linear-gradient(to left, #3BB2B8, #77C694);
-    color: white !important;
-    font-size: 1.2rem !important;
-    font-weight: 600;
-    border-radius: 24px !important;
-    padding: 0.5rem 0 !important;
-    width: 200px;
+    width: 190px;
+    line-height: 1;
+    padding: 10px 29px !important;
+    background: linear-gradient(90.14deg, #66C68F 1.34%, #21B8BF 99.89%);
+    border-radius: 55px;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: none;
 }
 
 .gradient-btn-fs-sm {
@@ -387,11 +392,16 @@ nav.navbar-mobile {
     border: none;
 }
 
-/* Language Dropdown */
 .ml-primary {
     background: transparent !important;
     padding: 3px 17px !important;
 }
+
+.lang-btn>.dropdown-toggle>a:hover {
+    color: var(--theme_green1);
+}
+
+/* Language Dropdown */
 
 .loginOutBTN {
     border: 1px solid rgb(0, 0, 0, 0.3) !important;
@@ -405,6 +415,18 @@ nav.navbar-mobile {
     height: 30px !important;
 }
 
+.lang-btn>.dropdown-toggle::after {
+    display: inline-block;
+    content: url(../images/arrow.svg);
+    border-top: 0 solid;
+    border-right: 0 solid transparent;
+    border-bottom: 0;
+    margin-top: -5px;
+    margin-left: 10px;
+    border-left: 0 solid transparent;
+}
+
+/*  */
 
 @media screen and (max-width : 600px) {
     .footer .footer-text {

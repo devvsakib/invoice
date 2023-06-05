@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PopUp - Mollure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Img Popup -->
+    <div class="popupContainer imgPopUp">
+        <div class="popup text-center">
+            <div class="d-flex justify-content-center title-area align-items-center position-relative">
+                <h3 class="poptitle mb-0">Upload Image</h3>
+                <button class="popclose"><img src="./close.svg" /></button>
+            </div>
+            <div class="upload-area d-flex justify-content-center align-items-center">
+                <div class="mt-3">
+                    <label for="fileInput" class="upload-label">
+                        <img src="./uploadfile.svg" alt="">
+                        <div class="upload-text">
+                            <p style="font-weight: 400;font-size: 16px;">Drag Your Images to Upload <br>
+                                or <span class="text-decoration-underline upload"
+                                    style="color: #000000; font-weight: 700;">Browse Here</span></p>
+                        </div>
+                    </label>
+                    <input type="file" id="fileInput" class="file-input">
+                </div>
+            </div>
+
+            <button class="pop-button">save</button>
+        </div>
+    </div>
+
+    <!-- Location Popup -->
+    <div class="popupContainer locationPopUp">
+        <div class="popup  text-center">
+            <div class="d-flex justify-content-center title-area align-items-center position-relative">
+                <h3 class="poptitle mb-0">Add Location</h3>
+                <button class="popclose"><img src="./close.svg" /></button>
+            </div>
+            <form class="d-grid  gap-2">
+                <div class="">
+                    <input type="text" placeholder="Saloon Name" class="form-control" id="contactnumber">
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Street" class="form-control" id="firstname">
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Number" class="form-control" id="lastname">
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Postal code" class="form-control" id="lastname">
+                </div>
+                <div>
+                    <div class="d-flex gap-2">
+                        <div class="col-6 px-0">
+                            <label class="custom-select custom-select-address">
+                                <select class="mollure-select-address">
+                                    <option value="">Province</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-6 px-0">
+                            <label class="custom-select custom-select-address">
+                                <select class="mollure-select-address">
+                                    <option value="">Municipality</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                    <option value="lorem">Lorem</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="pop-button">save</button>
+        </div>
+    </div>
+
+    <!-- Add Team Member -->
+    <div class="popupContainer teammemberPopUp">
+        <div class="popup  text-center">
+            <div class="d-flex justify-content-center title-area align-items-center position-relative">
+                <h3 class="poptitle mb-0">Add Team Member</h3>
+                <button class="popclose"><img src="./close.svg" /></button>
+            </div>
+            <form class="d-grid  gap-2">
+                <!-- Image Upload -->
+                <div class="d-flex tmprofile mx-auto justify-content-center align-items-center">
+                    <label for="tmpp" class="">
+                        <img src="./uploadfile.svg" alt="">
+                    </label>
+                    <input type="file" id="tmpp" hidden class="file-input">
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Team Member Name" class="form-control" id="contactnumber">
+                </div>
+                <div class="">
+                    <input type="text" placeholder="Bio" class="form-control" id="">
+                </div>
+                <div class="addservices">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex gap-1">
+                            <div class="px-0">
+                                <label class="custom-select custom-select-address">
+                                    <select class="mollure-select-address tmct">
+                                        <option value="">Select Category</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class=" px-0">
+                                <div class="services-container position-relative">
+                                    <div class="service-selector d-flex justify-content-between align-items-center p-3">
+                                        <p class="mb-0">Select Service</p>
+                                        <img src="./select-down-arrow.svg" alt="">
+                                    </div>
+                                    <ul class="service-items position-absolute">
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dlt_btn">
+                            <img src="./trash.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <p>
+                    <button type="button" id="addcatsurvice" class="d-inline-block">
+                        <img src="./plus.svg" alt=""> Category
+                    </button>
+                </p>
+            </form>
+            <button class="pop-button">save</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- POP ACTION -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="pop-button imgPop">Image POP</button>
+                <button class="pop-button lcPop">Add Location POP</button>
+                <button class="pop-button tmPop">Add Team Member POP</button>
+                <button class="pop-button">Address POP</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.upload-area').click(function () {
+                $('#fileInput').click(); // Trigger the file input click event directly
+            });
+
+            $('#fileInput').change(function () {
+                var file = $(this).prop('files')[0];
+                // Handle the file upload logic here
+                console.log('Selected file:', file);
+            });
+
+            $('.imgPop').click(function () {
+                $('.imgPopUp').fadeIn();
+            });
+            $('.lcPop').click(function () {
+                $('.locationPopUp').fadeIn();
+            });
+            $('.tmPop').click(function () {
+                $('.teammemberPopUp').fadeIn();
+            });
+            $('.popclose').click(function () {
+                $('.popupContainer').fadeOut();
+            })
+
+            $("#addcatsurvice").click(function () {
+                let html = `
+                <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex gap-1">
+                            <div class="px-0">
+                                <label class="custom-select custom-select-address">
+                                    <select class="mollure-select-address tmct">
+                                        <option value="">Select Category</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                        <option value="lorem">Lorem</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class=" px-0">
+                                <div class="services-container position-relative">
+                                    <div class="service-selector d-flex justify-content-between align-items-center p-3">
+                                        <p class="mb-0">Select Service</p>
+                                        <img src="./select-down-arrow.svg" alt="">
+                                    </div>
+                                    <ul class="service-items position-absolute">
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                        <li class="item d-flex justify-content-between align-items-center">
+                                            <span>Lorem</span>
+                                            <span class="sv-checkbox">
+                                                <i class="fa fa-check check-icon" aria-hidden="true"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="dlt_btn">
+                            <img src="./trash.svg" alt="">
+                        </button>
+                    </div>`
+                $(".addservices").append(html);
+            })
+
+        });
+        $('.custom-select').each(function () {
+            setupSelector($(this));
+        });
+        function setupSelector(selector) {
+            selector.on('change', function (e) {
+                console.log('changed', e.target.value);
+            });
+
+            selector.on('mousedown', function (e) {
+                if (window.innerWidth >= 420) { // override look for non-mobile
+                    e.preventDefault();
+
+                    const select = selector.children().eq(0);
+                    const dropDown = $('<ul>').addClass('selector-options');
+
+                    select.children().each(function () {
+                        const option = $(this);
+                        const dropDownOption = $('<li>').text(option.text());
+
+                        dropDownOption.on('mousedown', function (e) {
+                            e.stopPropagation();
+                            select.val(option.val());
+                            selector.val(option.val());
+                            select.trigger('change');
+                            selector.trigger('change');
+                            dropDown.remove();
+                        });
+
+                        dropDown.append(dropDownOption);
+                    });
+
+                    selector.append(dropDown);
+
+                    // handle click out
+                    $(document).on('click', function (e) {
+                        if (!selector.is(e.target) && !selector.has(e.target).length) {
+                            dropDown.remove();
+                        }
+                    });
+                }
+            });
+        }
+
+        $('.service-selector').click(function () {
+            $(this).toggleClass('open');
+        });
+
+        $('.item').click(function () {
+            $(this).toggleClass('checked');
+        });
+
+        $(document).click(function (event) {
+            var target = $(event.target);
+            if (!target.closest('.service-selector').length && !target.hasClass('checked')) {
+                $('.service-selector').removeClass('open');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
