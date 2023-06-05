@@ -71,7 +71,7 @@
                 </div>
                 <div>
                     <div class="d-flex gap-2">
-                        <div class="col-6 px-0 ms-2">
+                        <div class="col-6 px-0 ">
                             <label class="custom-select custom-select-address">
                                 <select class="mollure-select-address">
                                     <option value="">Province</option>
@@ -112,7 +112,7 @@
                             <div class="px-0">
                                 <label class="custom-select custom-select-address">
                                     <select class="mollure-select-address tmct">
-                                        <option value="">Municipality</option>
+                                        <option value="">Province</option>
                                         <option value="lorem">Lorem</option>
                                         <option value="lorem">Lorem</option>
                                         <option value="lorem">Lorem</option>
@@ -356,7 +356,7 @@
                 </div>
                 <div class="text-start">
                     <label for="" class="mb-2">Duration</label>
-                    <div class="d-flex gap-1 align-items-center">
+                    <div class="d-flex gap-1 align-items-center ">
                         <div class="px-0">
                             <label class="custom-select custom-select-address">
                                 <select class="mollure-select-address frm">
@@ -370,7 +370,7 @@
                         <span class="sp">
                             -
                         </span>
-                        <div class="px-0">
+                        <div class="px-0 ">
                             <label class="custom-select custom-select-address">
                                 <select class="mollure-select-address frmto">
                                     <option value="">To</option>
@@ -386,31 +386,27 @@
                     <input type="text" placeholder="Price" class="form-control" id="contactnumber">
                 </div>
                 <div class="text-start">
-                    <div class="px-0">
-                        <label class="custom-select custom-select-address">
-                            <select class="mollure-select-address stprice">
-                                <option value="">Select fixed or percentage discount</option>
-                                <option value="lorem">Lorem</option>
-                                <option value="lorem">Lorem</option>
-                                <option value="lorem">Lorem</option>
-                            </select>
-                        </label>
-                    </div>
+                    <label class="custom-select custom-select-address">
+                        <select class="mollure-select-address stprice" >
+                            <option value="">Select fixed or percentage discount</option>
+                            <option value="lorem">Lorem</option>
+                            <option value="lorem">Lorem</option>
+                            <option value="lorem">Lorem</option>
+                        </select>
+                    </label>
                 </div>
                 <div class="">
                     <input type="text" placeholder="Price" class="form-control" id="contactnumber">
                 </div>
-                <div class="text-start">
-                    <div class="px-0">
-                        <label class="custom-select custom-select-address">
-                            <select class="mollure-select-address stprice">
-                                <option value="">Date – Date</option>
-                                <option value="lorem">10 Feb - 12 Jan</option>
-                                <option value="lorem">10 Feb - 12 Jan</option>
-                                <option value="lorem">10 Feb - 12 Jan</option>
-                            </select>
-                        </label>
-                    </div>
+                <div class="">
+                    <label class="custom-select custom-select-address">
+                        <select class="mollure-select-address stprice" style="margin-left: 0px;">
+                            <option value="">Date – Date</option>
+                            <option value="lorem">10 Feb - 12 Jan</option>
+                            <option value="lorem">10 Feb - 12 Jan</option>
+                            <option value="lorem">10 Feb - 12 Jan</option>
+                        </select>
+                    </label>
                 </div>
                 <div class="position-relative tt">
                     <input type="text" placeholder="Info" class="form-control" id="contactnumber">
@@ -470,7 +466,7 @@
             $('.tmPop').click(function () {
                 $('.teammemberPopUp').fadeIn();
             });
-            $('.ssvPop').click(function () {
+            $('.ssvPodlcPopp').click(function () {
                 $('.subsurvicePopUp').fadeIn();
             });
             $('.svPop').click(function () {
@@ -538,7 +534,7 @@
                     $(this).closest('.srv').remove();
                 });
             })
-          
+
             $("#addprovince").click(function () {
                 let html = `
                 <div class="d-flex mt-2 align-items-center justify-content-between srv">
@@ -594,7 +590,7 @@
                     $(this).closest('.srv').remove();
                 });
             })
-          
+
             $('.dlt_btn').on('click', function () {
                 $(this).closest('.srv').remove();
             });

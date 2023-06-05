@@ -1,3 +1,7 @@
+body {
+    font-family: 'Playfair Display', serif;
+}
+
 .popupContainer {
     min-width: 100vw;
     min-height: 100vh;
@@ -25,13 +29,13 @@
     right: 20px;
 }
 
-.upload-area {
+.popup .upload-area {
     padding: 40px;
     position: relative;
     cursor: pointer;
 }
 
-.upload-area::before {
+.popup .upload-area::before {
     content: url(./Container.svg);
     position: absolute;
     top: 0px;
@@ -79,8 +83,8 @@
 }
 
 
-input,
-select {
+.popupContainer input,
+.popupContainer select {
     font-style: normal;
     font-weight: 400;
     font-size: 14px !important;
@@ -92,12 +96,12 @@ select {
     padding: 10px 14px 15px 10px !important;
 }
 
-input:focus {
+.popupContainer input:focus {
     outline: none !important;
     border: 1px solid #66C68F !important;
 }
 
-.mollure-select-address {
+.popupContainer .mollure-select-address {
     box-sizing: border-box;
     padding: 20px;
     padding-top: 5px;
@@ -122,7 +126,7 @@ input:focus {
 }
 
 
-.custom-select {
+.popupContainer .custom-select {
     position: relative;
     display: inline-block;
     font-size: 14px;
@@ -130,7 +134,7 @@ input:focus {
 
 }
 
-.custom-select .selector-options {
+.popupContainer .custom-select .selector-options {
     list-style: none;
     padding: 5px 0;
     margin: 0;
@@ -147,11 +151,11 @@ input:focus {
     border-radius: 8px;
 }
 
-.custom-select.custom-select-address {
+.popupContainer .custom-select.custom-select-address {
     min-width: 100% !important;
 }
 
-.custom-select .selector-options li {
+.popupContainer .custom-select .selector-options li {
     height: 44px;
     display: flex;
     align-items: center;
@@ -160,25 +164,25 @@ input:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.custom-select .selector-options li:first-child {
+.popupContainer .custom-select .selector-options li:first-child {
     border-width: 95%;
 }
 
-.custom-select .selector-options li:last-child {
+.popupContainer .custom-select .selector-options li:last-child {
     border-bottom: none;
 }
 
-.custom-select .selector-options li:hover {
+.popupContainer .custom-select .selector-options li:hover {
     background: #f5f5f59a;
 }
 
-.custom-select-address .selector-options {
+.popupContainer .custom-select-address .selector-options {
     width: 100% !important;
 }
 
-.mollure-select-address {
+.popupContainer .mollure-select-address {
     min-width: 98% !important;
-    margin-left: -8px;
+    /* margin-left: -8px; */
 }
 
 /* tmprofile */
@@ -207,7 +211,9 @@ input:focus {
 
 .service-selector p {
     font-weight: 400;
+    color: #5A5A5A;
     font-size: 14px;
+    margin-top: -3px;
 }
 
 .service-selector {
@@ -233,11 +239,12 @@ input:focus {
     background: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(16, 8, 63, 0.09);
     border-radius: 8px;
-    width: 180px;
+    width: 223px;
     overflow-y: scroll;
     padding: 5px 15px 0px 10px;
     display: none;
     z-index: 999;
+    right: 20px;
 }
 
 .service-items li {
@@ -285,13 +292,14 @@ input:focus {
     left: 5px;
 }
 
-.tmct {
+.popupContainer .tmct {
     margin-left: 2px;
     width: 170px;
     background-position-x: 130px;
 }
 
-#addcatsurvice, #addprovince {
+#addcatsurvice,
+#addprovince {
     border: none;
     cursor: pointer;
     background: linear-gradient(90.14deg, rgba(102, 198, 143, 0.1) 1.34%, rgba(33, 184, 191, 0.1) 99.89%);
@@ -308,6 +316,7 @@ input:focus {
     margin-top: 130px;
     margin-bottom: 100px;
 }
+
 .survicePopUp .popup {
     margin-bottom: 100px;
 }
@@ -337,7 +346,7 @@ input:focus {
     margin: 0 5px;
 }
 
-label {
+.popupContainer label {
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -383,22 +392,27 @@ label {
     padding: 7px 8px;
     position: absolute;
     right: 10px;
-    top:35px;
+    top: 35px;
     filter: drop-shadow(0px 4px 20px rgba(5, 8, 63, 0.11));
     display: none;
 }
-.inf:hover + #ttip{
+
+.inf:hover+#ttip {
     display: block;
 }
-.tshow:hover + #ttip{
+
+.popupContainer .tshow:hover+#ttip {
     display: block;
 }
+
 .resizes {
     resize: none !important;
 }
-.custom-select .selector-options {
+
+.popupContainer .custom-select .selector-options {
     width: 230px !important;
 }
+
 .dslocationPopUp .popups {
     min-height: 300px !important;
     background: #FFFFFF;
@@ -406,4 +420,13 @@ label {
     width: 446px !important;
     margin-top: 130px;
     padding: 25px;
+}
+
+.popupContainer .mollure-select-address.stprice {
+    background-position-x: 362px;
+}
+
+.popupContainer .frm,
+.popupContainer .frmto {
+    background-position-x: 150px;
 }
