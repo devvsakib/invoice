@@ -604,6 +604,7 @@
             $('.item').click(function () {
                 $(this).toggleClass('checked');
             });
+     
         });
         function setupSelector(selector) {
             selector.on('change', function (e) {
@@ -646,7 +647,9 @@
         }
 
 
-
+        // $(document).on('click', '.service-selector', function () {
+        //     $(this).toggleClass('open');
+        // });
         $(document).click(function (event) {
             var target = $(event.target);
             if (!target.closest('.service-selector').length && !target.hasClass('checked')) {
